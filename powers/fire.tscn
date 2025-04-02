@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://hp3k0pe0x6w8"]
+
+[ext_resource type="Script" uid="uid://fgagwbkjerdg" path="res://scripts/power_fire.gd" id="1_86owe"]
+[ext_resource type="Texture2D" uid="uid://c2blub7b1olwc" path="res://assets/fire_1.svg" id="1_n0x22"]
+
+[node name="Fire" type="Sprite2D"]
+position = Vector2(33, 0)
+scale = Vector2(0.192373, 0.169689)
+texture = ExtResource("1_n0x22")
+script = ExtResource("1_86owe")
+sprite_texture = ExtResource("1_n0x22")

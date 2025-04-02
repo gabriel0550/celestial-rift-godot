@@ -1,0 +1,38 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1743597154
+icon.svg::CompressedTexture2D::5168457037274154095::1743597049::1743597157::1::::<><><>0<>0<>6eaa3425993f15d7fab2a9924272790a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://actors/::1743597049
+player.tscn::PackedScene::4799919433943038428::1743597049::0::1::::<><><>0<>0<><>::res://scripts/player.gd<>uid://b3wflgb273fmq::::res://assets/personagem 2.png
+::res://assets/::1743597049
+1.png::CompressedTexture2D::5429982604174192052::1743597049::1743597158::1::::<><><>0<>0<>db58753af3076cc665807489981f637c<>res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex::
+2.png::CompressedTexture2D::4385731249487230660::1743597049::1743597157::1::::<><><>0<>0<>39e712bc6c284ec36c41e299060b26f6<>res://.godot/imported/2.png-f79589217c9a74fd0d3207c8643de526.ctex::
+3.png::CompressedTexture2D::5474165701745493680::1743597049::1743597157::1::::<><><>0<>0<>f368fb839eeb324a9371b9bf52e3214d<>res://.godot/imported/3.png-6b09eb25451f83adc8019315367ea1f5.ctex::
+4.png::CompressedTexture2D::9149672984236208043::1743597049::1743597157::1::::<><><>0<>0<>015d6bd1361b04cdf0bd82b7e5156d81<>res://.godot/imported/4.png-59f90d2603212c6302285cebb176551d.ctex::
+Background preview.png::CompressedTexture2D::289723890911309390::1743597049::1743597157::1::::<><><>0<>0<>86b503f169efefda7ecfc2d3f715592c<>res://.godot/imported/Background preview.png-d68c861bcb54dd6faf1f2b222832e65e.ctex::
+baixados (1).png::CompressedTexture2D::2030654958194074159::1743597049::1743597158::1::::<><><>0<>0<>bb857eb56ada5176ba58f2df1726c681<>res://.godot/imported/baixados (1).png-fb594bbb459debc8a9862a3bc3815092.ctex::
+brilho.png::CompressedTexture2D::4713683930656700223::1743597049::1743597157::1::::<><><>0<>0<>0f553966766e06a10f1baba562e915ff<>res://.godot/imported/brilho.png-463af25a636b73f2891d98986080a30b.ctex::
+Fire sheet.png::CompressedTexture2D::6847641729981003976::1743597049::1743597157::1::::<><><>0<>0<>4a553ed1566fe9a9bd49b77e0d6d929a<>res://.godot/imported/Fire sheet.png-c022fcb3e6bfd473ab38db69e35e66cf.ctex::
+fire_1.svg::CompressedTexture2D::6670708228203500618::1743597049::1743597157::1::::<><><>0<>0<>958379e3a6ede3011da562c0d9c246d7<>res://.godot/imported/fire_1.svg-df20f3c5214e1971598f534acce32af2.ctex::
+GandalfHardcore Hell Tiles 32x32 chão.png::CompressedTexture2D::1769718309243166508::1743597049::1743597157::1::::<><><>0<>0<>90da779a3d28053100a26bb8f73147f3<>res://.godot/imported/GandalfHardcore Hell Tiles 32x32 chão.png-b10450c8b303bc4da2bf5f395c57eff4.ctex::
+GandalfHardcore Hell Tiles 32x32 pedras.png::CompressedTexture2D::7070356245071777638::1743597049::1743597157::1::::<><><>0<>0<>6e81372986c898253781373b44f0245a<>res://.godot/imported/GandalfHardcore Hell Tiles 32x32 pedras.png-17414e90039027483928bc6365610f40.ctex::
+GandalfHardcore Hell Tiles 32x32 seputura .png::CompressedTexture2D::4530504754545431519::1743597049::1743597157::1::::<><><>0<>0<>a15fb4e973a10972e0ec9ed9a60305cc<>res://.godot/imported/GandalfHardcore Hell Tiles 32x32 seputura .png-60db84890a3095e69128ddef7a78bc3b.ctex::
+GandalfHardcore Hell Tiles 32x32.png::CompressedTexture2D::1240463221244217589::1743597049::1743597157::1::::<><><>0<>0<>7a82559705ea40432f3e5ce9f8b16766<>res://.godot/imported/GandalfHardcore Hell Tiles 32x32.png-a015f5abc22fda8b2ad4ca149c5e82b7.ctex::
+GandalfHardcore Warrior.png::CompressedTexture2D::907170292220445564::1743597049::1743597157::1::::<><><>0<>0<>e226d9aef9763e5d4fc54a320ad84a23<>res://.godot/imported/GandalfHardcore Warrior.png-4a510af3934b970b4081b77804af1695.ctex::
+pedra_de_poder.png::CompressedTexture2D::5080610444724691668::1743597049::1743597157::1::::<><><>0<>0<>52e26e6b0b139b61dabcc6aee7bdd1d4<>res://.godot/imported/pedra_de_poder.png-3a8364432965c47367db71a82ae78000.ctex::
+personagem 2.png::CompressedTexture2D::4397448162799640252::1743597049::1743597157::1::::<><><>0<>0<>d2598a76b894a521af0467f557cbe8c8<>res://.godot/imported/personagem 2.png-6ed40ad213b5adc6ba9ab41832c71bd8.ctex::
+power_stone.gd::GDScript::5702663643358815057::1743597049::0::1::::<>Area2D<><>0<>0<><>::
+power_stone.tscn::PackedScene::-1::1743597049::0::1::::<><><>0<>0<><>::
+::res://assets/GandalfHardcore Hell background/::1743597049
+back layer.png::CompressedTexture2D::7304000058740172669::1743597049::1743597158::1::::<><><>0<>0<>813d8d4a04d4df0e070e70d8dc644dfd<>res://.godot/imported/back layer.png-a3396dceaf11c5b37bbfea06fdc22f7e.ctex::
+Background layer.png::CompressedTexture2D::5488628677226170459::1743597049::1743597158::1::::<><><>0<>0<>0cfaea4f52342ebdc7ec5a4226c0a583<>res://.godot/imported/Background layer.png-95e5049d474c2280387d0e50a945713c.ctex::
+Background preview.png::CompressedTexture2D::2790036388042281135::1743597049::1743597157::1::::<><><>0<>0<>9b12f57f19d9ace5b7d69877c27af599<>res://.godot/imported/Background preview.png-e24a599844da2b054804328467e163d5.ctex::
+front layer.png::CompressedTexture2D::865729856164123343::1743597049::1743597158::1::::<><><>0<>0<>ebf14780b0c5e72293235755708ae7af<>res://.godot/imported/front layer.png-2f3a941f15cd9688a9d1a68ae0c3c693.ctex::
+middle layer.png::CompressedTexture2D::7275533123016475279::1743597049::1743597157::1::::<><><>0<>0<>4094c478d9d007a573b0a07f6ac8a2f5<>res://.godot/imported/middle layer.png-15065bec80f66524a4cf7204964b9ded.ctex::
+::res://levels/::1743597049
+world_1.tscn::PackedScene::4548520013405749827::1743597049::0::1::::<><><>0<>0<><>::uid://rw5ioyf8qfbp::::res://assets/GandalfHardcore Hell Tiles 32x32.png<>uid://0hjackm4icie::::res://assets/GandalfHardcore Hell Tiles 32x32 chão.png<>uid://b5su0suyvk4rj::::res://assets/GandalfHardcore Hell Tiles 32x32 seputura .png<>uid://cand8bnvmxf4w::::res://actors/player.tscn<>uid://hp3k0pe0x6w8::::res://powers/fire.tscn<>uid://cjmlaxknaufgu::::res://assets/1.png<>uid://b3qql8787p2q7::::res://assets/2.png<>uid://cj8yyd8gxyxqe::::res://assets/3.png<>uid://d3mf1orxdifd8::::res://assets/4.png<>res://scripts/pedra_pegar.gd<>uid://36wucugoghnj::::res://assets/baixados (1).png
+::res://powers/::1743597049
+fire.tscn::PackedScene::524006841985543825::1743597049::0::1::::<><><>0<>0<><>::res://scripts/power_fire.gd<>uid://c2blub7b1olwc::::res://assets/fire_1.svg
+::res://scripts/::1743597049
+pedra_pegar.gd::GDScript::6583518413833896314::1743597049::0::1::::<>Area2D<><>0<>0<><>::
+player.gd::GDScript::2006894240397724826::1743597049::0::1::::<>CharacterBody2D<><>0<>0<><>::
+power_fire.gd::GDScript::363342357003015776::1743597049::0::1::::<>Sprite2D<><>0<>0<><>::
