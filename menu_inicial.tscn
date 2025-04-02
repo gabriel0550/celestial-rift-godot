@@ -1,0 +1,287 @@
+[gd_scene load_steps=19 format=3 uid="uid://c3ckq7325xh2n"]
+
+[ext_resource type="Script" uid="uid://0atnvntntm4d" path="res://scripts/menu_inicial.gd" id="1_0tvy4"]
+[ext_resource type="VideoStream" uid="uid://cvigf8q5u8h5q" path="res://BG_ANIMADO.ogv" id="1_u4fxu"]
+[ext_resource type="Texture2D" uid="uid://ddf7drud2kn7h" path="res://Title_Screen/CELESTIAL RIFT - LOGO 2.png" id="2_3exob"]
+[ext_resource type="Theme" uid="uid://b34uwojuhjawh" path="res://Botão_default.tres" id="3_eap13"]
+[ext_resource type="AudioStream" uid="uid://u71814fdtmf0" path="res://videoplayback.mp3" id="3_ttr8g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eap13"]
+bg_color = Color(0.827451, 0.72549, 0.376471, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.827451, 0.72549, 0.376471, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktf6r"]
+bg_color = Color(1, 0.454902, 0.156863, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.454902, 0.156863, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tvy4"]
+bg_color = Color(1, 0.454902, 0.156863, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.454902, 0.156863, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ttr8g"]
+bg_color = Color(0.827451, 0.72549, 0.376471, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.827451, 0.72549, 0.376471, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="Theme" id="Theme_0tvy4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ttr8g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55v0k"]
+bg_color = Color(0.827451, 0.72549, 0.376471, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.827451, 0.72549, 0.376471, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pme7s"]
+bg_color = Color(1, 0.454902, 0.156863, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.454902, 0.156863, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7do68"]
+bg_color = Color(0.827451, 0.72549, 0.376471, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.827451, 0.72549, 0.376471, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tnvki"]
+bg_color = Color(0.827451, 0.72549, 0.376471, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.827451, 0.72549, 0.376471, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7jsh"]
+bg_color = Color(0.827451, 0.72549, 0.376471, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.827451, 0.72549, 0.376471, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mehpy"]
+bg_color = Color(1, 0.454902, 0.156863, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(1, 0.454902, 0.156863, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1v8tx"]
+bg_color = Color(0.827451, 0.72549, 0.376471, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.827451, 0.72549, 0.376471, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Menu inicial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0tvy4")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stream = ExtResource("1_u4fxu")
+autoplay = true
+expand = true
+loop = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ttr8g")
+volume_db = 0.7
+autoplay = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_3exob")
+
+[node name="START_BTN" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_eap13")
+theme_override_styles/hover = SubResource("StyleBoxFlat_eap13")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_ktf6r")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0tvy4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ttr8g")
+text = "COMEÇAR   O   JOGO"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0tvy4")
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ttr8g")
+
+[node name="HSeparator6" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0tvy4")
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ttr8g")
+
+[node name="HSeparator7" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0tvy4")
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ttr8g")
+
+[node name="CREDITS_BNT" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_eap13")
+theme_override_styles/hover = SubResource("StyleBoxFlat_55v0k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pme7s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7do68")
+text = "CREDITOS"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0tvy4")
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ttr8g")
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0tvy4")
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ttr8g")
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_0tvy4")
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ttr8g")
+
+[node name="QUIT_BTN" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_eap13")
+theme_override_styles/focus = SubResource("StyleBoxFlat_tnvki")
+theme_override_styles/hover = SubResource("StyleBoxFlat_d7jsh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mehpy")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1v8tx")
+text = "SAIR   DO   JOGO"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/START_BTN" to="." method="_on_start_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/CREDITS_BNT" to="." method="_on_credits_bnt_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/QUIT_BTN" to="." method="_on_quit_btn_pressed"]
