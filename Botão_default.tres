@@ -1,0 +1,45 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://b34uwojuhjawh"]
+
+[ext_resource type="FontFile" uid="uid://c5imtc2ksu2y5" path="res://Enchanted Land fonte.otf" id="1_rukad"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf68h"]
+bg_color = Color(0.8894, 0.453438, 0.248538, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0r7a7"]
+bg_color = Color(0.839846, 0.72436, 0.4051, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8894, 0.453438, 0.248538, 1)
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h1j8b"]
+bg_color = Color(0.839846, 0.72436, 0.4051, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.912187, 0.645703, 0.217473, 1)
+border_blend = true
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qts1a"]
+bg_color = Color(0.8894, 0.453438, 0.248538, 1)
+border_color = Color(1, 1, 1, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_bottom = 5.0
+
+[resource]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_rukad")
+Button/styles/focus = SubResource("StyleBoxFlat_gf68h")
+Button/styles/hover = SubResource("StyleBoxFlat_0r7a7")
+Button/styles/normal = SubResource("StyleBoxFlat_h1j8b")
+Button/styles/pressed = SubResource("StyleBoxFlat_qts1a")
