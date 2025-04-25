@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b52lpv30byotv"]
+[gd_scene load_steps=32 format=3 uid="uid://b52lpv30byotv"]
 
 [ext_resource type="Texture2D" uid="uid://rw5ioyf8qfbp" path="res://assets/GandalfHardcore Hell Tiles 32x32.png" id="1_4nbp6"]
 [ext_resource type="Texture2D" uid="uid://0hjackm4icie" path="res://assets/GandalfHardcore Hell Tiles 32x32 chão.png" id="2_3fa71"]
@@ -11,6 +11,13 @@
 [ext_resource type="Texture2D" uid="uid://d3mf1orxdifd8" path="res://assets/4.png" id="9_eja1n"]
 [ext_resource type="Script" uid="uid://c02dt65lfie1g" path="res://scripts/pedra_pegar.gd" id="10_36i5x"]
 [ext_resource type="Texture2D" uid="uid://36wucugoghnj" path="res://assets/baixados (1).png" id="10_bn8vb"]
+[ext_resource type="PackedScene" uid="uid://b6x8g0v0j5o1y" path="res://scenes/hearts_ui.tscn" id="12_6r8k1"]
+[ext_resource type="Script" uid="uid://dpd33rixuthok" path="res://scripts/thorn.gd" id="12_hclqf"]
+[ext_resource type="Texture2D" uid="uid://dx81aa7w2uysc" path="res://assets/—Pngtree—pixel love_3279134.png" id="13_thqsu"]
+[ext_resource type="Script" uid="uid://ylvpheqyff3x" path="res://scripts/hearts_ui.gd" id="14_rsm41"]
+[ext_resource type="PackedScene" uid="uid://cl2wsgmwpj0ur" path="res://scenes/GameOver.tscn" id="16_uc2ke"]
+[ext_resource type="Script" uid="uid://c7o2ntvmmou8e" path="res://scripts/game_over.gd" id="17_ivm7e"]
+[ext_resource type="Texture2D" uid="uid://bndcymrejoy5a" path="res://assets/game-over.png" id="18_1jfbe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_loaws"]
 texture = ExtResource("1_4nbp6")
@@ -596,7 +603,7 @@ sources/10 = SubResource("TileSetAtlasSource_loaws")
 size = Vector2(419, 44.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emhbu"]
-size = Vector2(24, 13.375)
+size = Vector2(22, 11.3755)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_472wx"]
 size = Vector2(15, 21)
@@ -604,8 +611,17 @@ size = Vector2(15, 21)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nyqu"]
 size = Vector2(157, 51.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v6ew"]
-size = Vector2(181, 12.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsm41"]
+size = Vector2(178, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0ddp"]
+size = Vector2(72, 24.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qaao"]
+size = Vector2(176.5, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uc2ke"]
+size = Vector2(69.5, 25.5)
 
 [node name="world-1" type="Node2D"]
 position = Vector2(0, 50)
@@ -632,7 +648,7 @@ position = Vector2(203.5, 245.25)
 shape = SubResource("RectangleShape2D_0sr3p")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(448, 229.688)
+position = Vector2(449, 230.688)
 shape = SubResource("RectangleShape2D_emhbu")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
@@ -649,7 +665,7 @@ shape = SubResource("RectangleShape2D_emhbu")
 position = Vector2(0, 50)
 
 [node name="Sprite2D" type="Sprite2D" parent="bg/4"]
-position = Vector2(-4, -176)
+position = Vector2(-3, -176)
 scale = Vector2(1.20801, 1.28324)
 texture = ExtResource("6_7qafx")
 centered = false
@@ -703,12 +719,113 @@ shape = SubResource("RectangleShape2D_8nyqu")
 position = Vector2(862.5, 253.25)
 shape = SubResource("RectangleShape2D_8nyqu")
 
-[node name="chao_espinho" type="StaticBody2D" parent="."]
+[node name="chao_espinho" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+script = ExtResource("12_hclqf")
+
+[node name="DamageCooldown" type="Timer" parent="chao_espinho"]
+one_shot = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="chao_espinho"]
-position = Vector2(499.5, 269.25)
-shape = SubResource("RectangleShape2D_5v6ew")
+position = Vector2(496, 270)
+shape = SubResource("RectangleShape2D_rsm41")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="chao_espinho"]
-position = Vector2(761, 267.5)
-shape = SubResource("RectangleShape2D_5v6ew")
+position = Vector2(757, 274.75)
+shape = SubResource("RectangleShape2D_v0ddp")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="chao_espinho"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao_espinho/StaticBody2D"]
+position = Vector2(493.75, 277.5)
+shape = SubResource("RectangleShape2D_1qaao")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="chao_espinho"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chao_espinho/StaticBody2D2"]
+position = Vector2(757.25, 277.25)
+shape = SubResource("RectangleShape2D_uc2ke")
+
+[node name="UI" type="CanvasLayer" parent="."]
+offset = Vector2(2, 0)
+transform = Transform2D(1, 0, 0, 1, 2, 0)
+
+[node name="HeartsUI" parent="UI" instance=ExtResource("12_6r8k1")]
+anchors_preset = -1
+anchor_left = 0.352
+anchor_top = 0.192
+anchor_right = 0.478
+anchor_bottom = 0.271
+offset_left = -135.8
+offset_top = -24.8
+offset_right = 82.3
+offset_bottom = 67.85
+max_hearts = 1
+
+[node name="HeartsContainer" type="HBoxContainer" parent="UI/HeartsUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.6
+anchor_bottom = 1.0
+offset_left = -44.0
+offset_top = -24.0
+offset_right = 147.2
+offset_bottom = -11.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+script = ExtResource("14_rsm41")
+
+[node name="TextureRect" type="TextureRect" parent="UI/HeartsUI/HeartsContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("13_thqsu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="UI/HeartsUI/HeartsContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("13_thqsu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="UI/HeartsUI/HeartsContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("13_thqsu")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GameOver" parent="." instance=ExtResource("16_uc2ke")]
+visibility_layer = 524289
+script = ExtResource("17_ivm7e")
+
+[node name="GameOverImage" type="TextureRect" parent="GameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 487.0
+offset_top = -6.0
+offset_right = 704.0
+offset_bottom = 182.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_1jfbe")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="RestartButton" type="Button" parent="GameOver"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 0
+offset_left = 494.0
+offset_top = 141.0
+offset_right = 694.0
+offset_bottom = 191.0
+text = "Restart"
+
+[connection signal="timeout" from="chao_espinho/DamageCooldown" to="chao_espinho" method="_on_damage_cooldown_timeout"]

@@ -1,3 +1,8 @@
 res://levels/world_1.tscn
+res://scenes/hearts_ui.tscn
+res://scripts/thorn.gd
+res://scripts/player.gd
+res://scripts/hearts_ui.gd
 res://Botão_default.tres
-res://menu_inicial.tscn
+res://scripts/game_over.gd
+res://scenes/GameOver.tscn
