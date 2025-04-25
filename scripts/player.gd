@@ -120,8 +120,11 @@ func soltar_poder() -> void:
 		return
 
 	get_parent().add_child(poder)
-	poder.position = position + Vector2(10 * sign(scale.x), -10)  
-	poder.direction = sign(scale.x)
+	poder.position = position + Vector2(10 * sign(scale.x), -10)
+	
+	# Set the direction as a Vector2 based on player's facing direction
+	poder.direction = Vector2(sign(scale.x), 0)
+	poder.is_enemy_power = false  # Make sure it's marked as player's power
 
 	print("Poder criado na posição:", poder.position)
 

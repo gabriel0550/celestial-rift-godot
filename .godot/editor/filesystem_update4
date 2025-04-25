@@ -6,3 +6,9 @@ res://scripts/hearts_ui.gd
 res://Botão_default.tres
 res://scripts/game_over.gd
 res://scenes/GameOver.tscn
+res://scenes/enemy1.tscn
+res://scripts/enemy.gd
+res://scenes/enemy.tscn
+res://powers/fire.tscn
+res://scripts/power_fire.gd
+res://actors/player.tscn

@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1jekgrsslwpk"]
+
+[ext_resource type="Script" uid="uid://cgysr388ox2ua" path="res://scripts/enemy.gd" id="1_n665k"]
+[ext_resource type="PackedScene" uid="uid://hp3k0pe0x6w8" path="res://powers/fire.tscn" id="2_lowyn"]
+[ext_resource type="Texture2D" uid="uid://cfvvy5rv8hu1d" path="res://icon.svg" id="3_iolyx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n665k"]
+size = Vector2(25, 26)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_n665k")
+power_scene = ExtResource("2_lowyn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.210938, 0.21875)
+texture = ExtResource("3_iolyx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_n665k")
+
+[connection signal="ready" from="." to="." method="_ready"]
