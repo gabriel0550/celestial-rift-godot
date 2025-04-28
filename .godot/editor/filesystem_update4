@@ -1,6 +1,7 @@
+res://scripts/enemy.gd
 res://levels/world_1.tscn
+res://Botão_default.tres
 res://scenes/enemy.tscn
 res://actors/player.tscn
 res://powers/fire.tscn
-res://Botão_default.tres
 res://menu_inicial.tscn

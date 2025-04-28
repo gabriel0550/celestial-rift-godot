@@ -16,6 +16,9 @@ var walk_distance = 0.0
 var max_health = 5
 var current_health = max_health
 
+# Get gravity from project settings
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+
 func _ready() -> void:
 	# Find the player node
 	player = get_node("/root/world-1/player")
@@ -23,10 +26,16 @@ func _ready() -> void:
 		print("Warning: Player not found!")
 	# Add enemy to the enemy group
 	add_to_group("enemy")
+	# Play walk animation by default
+	$AnimationPlayer.play("andar_demonio")
 
 func _physics_process(delta: float) -> void:
 	if player == null:
 		return
+		
+	# Add gravity
+	if not is_on_floor():
+		velocity.y += gravity * delta
 		
 	# Calculate distance to player
 	var distance_to_player = position.distance_to(player.position)
@@ -51,6 +60,9 @@ func _physics_process(delta: float) -> void:
 		
 		velocity.x = SPEED * walk_direction
 		move_and_slide()
+		# Ensure walk animation is playing
+		if not $AnimationPlayer.is_playing() or $AnimationPlayer.current_animation != "andar_demonio":
+			$AnimationPlayer.play("andar_demonio")
 
 func cast_powers() -> void:
 	if power_scene == null:
