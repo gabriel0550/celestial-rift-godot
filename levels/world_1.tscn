@@ -610,7 +610,7 @@ size = Vector2(22, 11.3755)
 size = Vector2(15, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nyqu"]
-size = Vector2(166, 51.5)
+size = Vector2(158, 51.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsm41"]
 size = Vector2(178, 25)
@@ -724,7 +724,7 @@ shape = SubResource("RectangleShape2D_8nyqu")
 [node name="ultimo_node" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="ultimo_node"]
-position = Vector2(927, 253)
+position = Vector2(923, 253)
 shape = SubResource("RectangleShape2D_8nyqu")
 
 [node name="chao_espinho" type="Area2D" parent="."]

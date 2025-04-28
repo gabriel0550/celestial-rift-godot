@@ -1,15 +1,15 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1745849831
+::res://::1745875981
 BG_ANIMADO.ogv::VideoStreamTheora/VideoStreamTheora::6263697096122004656::1745842850::0::1::::<><><>0<>0<><>::
 BG_MENU.png::CompressedTexture2D/CompressedTexture2D::4622541034329646050::1745842850::1745842876::1::::<><><>0<>0<>45d08934ce43958bee0baa5f05f4ee16<>res://.godot/imported/BG_MENU.png-f4233bccb08bbc88b400c22e14091009.ctex::
-Botão_default.tres::Theme::4412829637895537387::1745845246::0::1::::<><><>0<>0<><>::uid://c5imtc2ksu2y5::::res://Enchanted Land fonte.otf
+Botão_default.tres::Theme::4412829637895537387::1745849899::0::1::::<><><>0<>0<><>::uid://c5imtc2ksu2y5::::res://Enchanted Land fonte.otf
 Enchanted Land fonte.otf::FontFile/FontFile::6895784379792688378::1745842850::1745842875::1::::<><><>0<>0<>db7c9e23147defa0f46c8fcdb99c7562<>res://.godot/imported/Enchanted Land fonte.otf-aca4354867b332f47dcd3fa3cc22acae.fontdata::
 icon.svg::CompressedTexture2D/CompressedTexture2D::5168457037274154095::1745842850::1745842875::1::::<><><>0<>0<>6eaa3425993f15d7fab2a9924272790a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-menu_inicial.tscn::PackedScene::6742895212658859191::1745849535::0::1::::<><><>0<>0<><>::uid://0atnvntntm4d::::res://scripts/menu_inicial.gd<>uid://cvigf8q5u8h5q::::res://BG_ANIMADO.ogv<>uid://ddf7drud2kn7h::::res://Title_Screen/CELESTIAL RIFT - LOGO 2.png<>uid://b34uwojuhjawh::::res://Botão_default.tres<>uid://u71814fdtmf0::::res://videoplayback.mp3
+menu_inicial.tscn::PackedScene::6742895212658859191::1745850192::0::1::::<><><>0<>0<><>::uid://0atnvntntm4d::::res://scripts/menu_inicial.gd<>uid://cvigf8q5u8h5q::::res://BG_ANIMADO.ogv<>uid://ddf7drud2kn7h::::res://Title_Screen/CELESTIAL RIFT - LOGO 2.png<>uid://b34uwojuhjawh::::res://Botão_default.tres<>uid://u71814fdtmf0::::res://videoplayback.mp3
 README.md::TextFile/TextFile::-1::1745842850::0::1::::<><><>0<>0<><>::
 videoplayback.mp3::AudioStreamMP3/AudioStreamMP3::1471475944539728923::1745842850::1745842875::1::::<><><>0<>0<>4ec0c1bb41d70067aaefd2b7374cbf49<>res://.godot/imported/videoplayback.mp3-c709a2cb73d9ed09f7d60515ead01c61.mp3str::
-::res://actors/::1745849535
-player.tscn::PackedScene::4799919433943038428::1745849535::0::1::::<><><>0<>0<><>::uid://3ufiwxyboiji::::res://scripts/player.gd<>uid://b3wflgb273fmq::::res://assets/personagem 2.png
+::res://actors/::1745850192
+player.tscn::PackedScene::4799919433943038428::1745850192::0::1::::<><><>0<>0<><>::uid://3ufiwxyboiji::::res://scripts/player.gd<>uid://b3wflgb273fmq::::res://assets/personagem 2.png
 ::res://assets/::1745845553
 1.png::CompressedTexture2D/CompressedTexture2D::5429982604174192052::1745842850::1745842875::1::::<><><>0<>0<>db58753af3076cc665807489981f637c<>res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex::
 2.png::CompressedTexture2D/CompressedTexture2D::4385731249487230660::1745842850::1745842875::1::::<><><>0<>0<>39e712bc6c284ec36c41e299060b26f6<>res://.godot/imported/2.png-f79589217c9a74fd0d3207c8643de526.ctex::
@@ -51,17 +51,17 @@ Background layer.png::CompressedTexture2D/CompressedTexture2D::54886286772261704
 Background preview.png::CompressedTexture2D/CompressedTexture2D::2790036388042281135::1745842850::1745842875::1::::<><><>0<>0<>9b12f57f19d9ace5b7d69877c27af599<>res://.godot/imported/Background preview.png-e24a599844da2b054804328467e163d5.ctex::
 front layer.png::CompressedTexture2D/CompressedTexture2D::865729856164123343::1745842850::1745842875::1::::<><><>0<>0<>ebf14780b0c5e72293235755708ae7af<>res://.godot/imported/front layer.png-2f3a941f15cd9688a9d1a68ae0c3c693.ctex::
 middle layer.png::CompressedTexture2D/CompressedTexture2D::7275533123016475279::1745842850::1745842875::1::::<><><>0<>0<>4094c478d9d007a573b0a07f6ac8a2f5<>res://.godot/imported/middle layer.png-15065bec80f66524a4cf7204964b9ded.ctex::
-::res://levels/::1745849535
-world_1.tscn::PackedScene::4548520013405749827::1745849535::0::1::::<><><>0<>0<><>::uid://rw5ioyf8qfbp::::res://assets/GandalfHardcore Hell Tiles 32x32.png<>uid://0hjackm4icie::::res://assets/GandalfHardcore Hell Tiles 32x32 chão.png<>uid://b5su0suyvk4rj::::res://assets/GandalfHardcore Hell Tiles 32x32 seputura .png<>uid://cand8bnvmxf4w::::res://actors/player.tscn<>uid://hp3k0pe0x6w8::::res://powers/fire.tscn<>uid://cjmlaxknaufgu::::res://assets/1.png<>uid://b3qql8787p2q7::::res://assets/2.png<>uid://cj8yyd8gxyxqe::::res://assets/3.png<>uid://d3mf1orxdifd8::::res://assets/4.png<>uid://c02dt65lfie1g::::res://scripts/pedra_pegar.gd<>uid://36wucugoghnj::::res://assets/baixados (1).png<>uid://b6x8g0v0j5o1y::::res://scenes/hearts_ui.tscn<>uid://dpd33rixuthok::::res://scripts/thorn.gd<>uid://dx81aa7w2uysc::::res://assets/—Pngtree—pixel love_3279134.png<>uid://ylvpheqyff3x::::res://scripts/hearts_ui.gd<>uid://cl2wsgmwpj0ur::::res://scenes/GameOver.tscn<>uid://c7o2ntvmmou8e::::res://scripts/game_over.gd<>uid://bndcymrejoy5a::::res://assets/game-over.png<>uid://c1jekgrsslwpk::::res://scenes/enemy.tscn
-::res://powers/::1745849535
+::res://levels/::1745850216
+world_1.tscn::PackedScene::4548520013405749827::1745850216::0::1::::<><><>0<>0<><>::uid://rw5ioyf8qfbp::::res://assets/GandalfHardcore Hell Tiles 32x32.png<>uid://0hjackm4icie::::res://assets/GandalfHardcore Hell Tiles 32x32 chão.png<>uid://b5su0suyvk4rj::::res://assets/GandalfHardcore Hell Tiles 32x32 seputura .png<>uid://cand8bnvmxf4w::::res://actors/player.tscn<>uid://hp3k0pe0x6w8::::res://powers/fire.tscn<>uid://cjmlaxknaufgu::::res://assets/1.png<>uid://b3qql8787p2q7::::res://assets/2.png<>uid://cj8yyd8gxyxqe::::res://assets/3.png<>uid://d3mf1orxdifd8::::res://assets/4.png<>uid://c02dt65lfie1g::::res://scripts/pedra_pegar.gd<>uid://36wucugoghnj::::res://assets/baixados (1).png<>uid://b6x8g0v0j5o1y::::res://scenes/hearts_ui.tscn<>uid://dpd33rixuthok::::res://scripts/thorn.gd<>uid://dx81aa7w2uysc::::res://assets/—Pngtree—pixel love_3279134.png<>uid://ylvpheqyff3x::::res://scripts/hearts_ui.gd<>uid://cl2wsgmwpj0ur::::res://scenes/GameOver.tscn<>uid://c7o2ntvmmou8e::::res://scripts/game_over.gd<>uid://bndcymrejoy5a::::res://assets/game-over.png<>uid://c1jekgrsslwpk::::res://scenes/enemy.tscn
+::res://powers/::1745850192
 enemy_fire.tscn::PackedScene/PackedScene::301564939904817825::1745842850::0::1::::<><><>0<>0<><>::res://scripts/power_fire.gd<>res://assets/fire_1.svg
-fire.tscn::PackedScene::524006841985543825::1745849535::0::1::::<><><>0<>0<><>::uid://fgagwbkjerdg::::res://scripts/power_fire.gd<>uid://c2blub7b1olwc::::res://assets/fire_1.svg
-::res://scenes/::1745849536
-enemy.tscn::PackedScene::6616591769915822808::1745849536::0::1::::<><><>0<>0<><>::uid://cgysr388ox2ua::::res://scripts/enemy.gd<>uid://hp3k0pe0x6w8::::res://powers/fire.tscn<>uid://cvicu4bkw2l2a::::res://assets/enemy_fire/demon_idle_1.png
+fire.tscn::PackedScene::524006841985543825::1745850192::0::1::::<><><>0<>0<><>::uid://fgagwbkjerdg::::res://scripts/power_fire.gd<>uid://c2blub7b1olwc::::res://assets/fire_1.svg
+::res://scenes/::1745850192
+enemy.tscn::PackedScene::6616591769915822808::1745850192::0::1::::<><><>0<>0<><>::uid://cgysr388ox2ua::::res://scripts/enemy.gd<>uid://hp3k0pe0x6w8::::res://powers/fire.tscn<>uid://cvicu4bkw2l2a::::res://assets/enemy_fire/demon_idle_1.png
 GameOver.tscn::PackedScene/PackedScene::5602025099593084181::1745842850::0::1::::<><><>0<>0<><>::
 hearts_ui.tscn::PackedScene/PackedScene::4611771247013957668::1745842850::0::1::::<><><>0<>0<><>::uid://ylvpheqyff3x::::res://scripts/hearts_ui.gd<>uid://dx81aa7w2uysc::::res://assets/—Pngtree—pixel love_3279134.png
 ::res://scripts/::1745849422
-enemy.gd::GDScript::5244644282829373964::1745849422::0::1::::<>CharacterBody2D<><>0<>0<><>::
+enemy.gd::GDScript::5244644282829373964::1745849874::0::1::::<>CharacterBody2D<><>0<>0<><>::
 game_over.gd::GDScript/GDScript::7049449257431914534::1745842850::0::1::::<>Control<><>0<>0<><>::
 hearts_ui.gd::GDScript/GDScript::1708542620966014731::1745842850::0::1::::<>Control<><>0<>0<><>::
 menu_inicial.gd::GDScript/GDScript::1755899053088353557::1745842850::0::1::::<>Control<><>0<>0<><>::

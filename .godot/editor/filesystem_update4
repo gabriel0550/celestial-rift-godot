@@ -1,4 +1,3 @@
-res://scripts/enemy.gd
 res://levels/world_1.tscn
 res://Botão_default.tres
 res://scenes/enemy.tscn

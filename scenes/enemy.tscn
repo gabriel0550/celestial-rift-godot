@@ -1,8 +1,20 @@
-[gd_scene load_steps=9 format=3 uid="uid://c1jekgrsslwpk"]
+[gd_scene load_steps=21 format=3 uid="uid://c1jekgrsslwpk"]
 
 [ext_resource type="Script" uid="uid://cgysr388ox2ua" path="res://scripts/enemy.gd" id="1_n665k"]
 [ext_resource type="PackedScene" uid="uid://hp3k0pe0x6w8" path="res://powers/fire.tscn" id="2_lowyn"]
 [ext_resource type="Texture2D" uid="uid://cvicu4bkw2l2a" path="res://assets/enemy_fire/demon_idle_1.png" id="3_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://dk4yjw7gan42w" path="res://assets/enemy_fire/demon_walk_1.png" id="4_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://v65t8ktxb5en" path="res://assets/enemy_fire/demon_walk_2.png" id="5_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://0n3juo4m1286" path="res://assets/enemy_fire/demon_walk_3.png" id="6_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://cp2fuhek6vqk2" path="res://assets/enemy_fire/demon_walk_4.png" id="7_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://oistdfkakxei" path="res://assets/enemy_fire/demon_walk_5.png" id="8_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://jrtg7fhhp45f" path="res://assets/enemy_fire/demon_walk_6.png" id="9_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://d16yp2iyhimcx" path="res://assets/enemy_fire/demon_walk_7.png" id="10_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://sn4himq7xnqm" path="res://assets/enemy_fire/demon_walk_8.png" id="11_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://b6m8bd2rvpcet" path="res://assets/enemy_fire/demon_walk_9.png" id="12_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://dexw5ft6mi1f3" path="res://assets/enemy_fire/demon_walk_10.png" id="13_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://ol52e4vcbg2t" path="res://assets/enemy_fire/demon_walk_11.png" id="14_4ra3w"]
+[ext_resource type="Texture2D" uid="uid://tr5i2e6jf6ky" path="res://assets/enemy_fire/demon_walk_12.png" id="15_4ra3w"]
 
 [sub_resource type="TileSet" id="TileSet_4ra3w"]
 
@@ -26,6 +38,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_5uy6h"]
 resource_name = "andar_demonio"
+length = 0.6
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -33,10 +46,10 @@ tracks/0/path = NodePath("Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("3_4ra3w")]
+"values": [ExtResource("4_4ra3w"), ExtResource("5_4ra3w"), ExtResource("6_4ra3w"), ExtResource("7_4ra3w"), ExtResource("8_4ra3w"), ExtResource("9_4ra3w"), ExtResource("10_4ra3w"), ExtResource("11_4ra3w"), ExtResource("12_4ra3w"), ExtResource("13_4ra3w"), ExtResource("14_4ra3w"), ExtResource("15_4ra3w")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xwavj"]
