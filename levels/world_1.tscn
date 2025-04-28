@@ -625,7 +625,7 @@ size = Vector2(176.5, 33)
 size = Vector2(69.5, 25.5)
 
 [node name="world-1" type="Node2D"]
-position = Vector2(0, 50)
+position = Vector2(3, 50)
 
 [node name="level" type="TileMap" parent="."]
 texture_filter = 1

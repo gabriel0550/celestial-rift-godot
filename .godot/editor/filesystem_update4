@@ -1,14 +1,6 @@
 res://levels/world_1.tscn
-res://scenes/hearts_ui.tscn
-res://scripts/thorn.gd
-res://scripts/player.gd
-res://scripts/hearts_ui.gd
-res://Botão_default.tres
-res://scripts/game_over.gd
-res://scenes/GameOver.tscn
-res://scenes/enemy1.tscn
-res://scripts/enemy.gd
 res://scenes/enemy.tscn
-res://powers/fire.tscn
-res://scripts/power_fire.gd
 res://actors/player.tscn
+res://powers/fire.tscn
+res://Botão_default.tres
+res://menu_inicial.tscn
