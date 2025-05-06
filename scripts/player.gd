@@ -11,6 +11,14 @@ var current_hearts: int = max_hearts
 var is_dead: bool = false
 var hearts_ui: Control = null
 var game_over_screen: Control = null
+var facing_right: bool = true  # Track which way the player is facing
+
+# Damage effect variables
+var is_flashing: bool = false
+var flash_timer: float = 0.0
+const FLASH_DURATION: float = 0.5  # Total duration of the flash effect
+const FLASH_INTERVAL: float = 0.1  # Time between each flash
+var animated_sprite: AnimatedSprite2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -18,6 +26,11 @@ func _ready() -> void:
 	# Add the player to the "player" group
 	add_to_group("player")
 	print("Player added to 'player' group")
+	
+	# Get the animated sprite node
+	animated_sprite = $AnimatedSprite2D
+	if animated_sprite == null:
+		print("Warning: AnimatedSprite2D not found!")
 	
 	# Find the hearts UI in the scene
 	hearts_ui = get_node("/root/world-1/UI/HeartsUI")
@@ -27,18 +40,18 @@ func _ready() -> void:
 		print("HeartsUI found successfully")
 		
 	# Find the Game Over screen in the scene
-	game_over_screen = get_node("/root/world-1/GameOver2")
+	game_over_screen = get_node("/root/world-1/GameOver")
 	if game_over_screen == null:
-		print("Warning: GameOver2 screen not found! Make sure to add the GameOver2 scene to your world-1 scene at the path /root/world-1/GameOver2")
-		# We'll continue without the game over screen
+		print("Warning: Game Over screen not found! Make sure to add the GameOver scene to your world-1 scene")
 	else:
-		print("GameOver2 screen found successfully")
+		print("Game Over screen found successfully")
 		
 	# Update the hearts UI when the game starts
 	update_hearts_ui()
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
+		velocity = Vector2.ZERO  # Stop all movement when dead
 		return
 		
 	if not is_on_floor():
@@ -52,6 +65,13 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction != 0:
 		velocity.x = direction * SPEED
+		# Flip the character instantly based on movement direction
+		if direction < 0 and facing_right:
+			scale.x = -1
+			facing_right = false
+		elif direction > 0 and not facing_right:
+			scale.x = 1
+			facing_right = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED * 6 * delta)  
 
@@ -61,6 +81,20 @@ func _physics_process(delta: float) -> void:
 		soltar_poder()
    
 	move_and_slide()
+	
+	# Update flash effect
+	if is_flashing:
+		flash_timer += delta
+		if flash_timer >= FLASH_DURATION:
+			is_flashing = false
+			flash_timer = 0.0
+			if animated_sprite:
+				animated_sprite.modulate = Color(1, 1, 1)  # Reset to normal color
+		else:
+			# Flash effect
+			if animated_sprite:
+				var flash_value = sin(flash_timer * PI / FLASH_INTERVAL) > 0
+				animated_sprite.modulate = Color(2, 2, 2) if flash_value else Color(1, 1, 1)
 
 # Health system functions
 func take_damage() -> void:
@@ -72,9 +106,12 @@ func take_damage() -> void:
 	print("Player took damage! Current hearts: ", current_hearts)
 	update_hearts_ui()
 	
+	# Start flash effect
+	is_flashing = true
+	flash_timer = 0.0
+	
 	if current_hearts <= 0:
 		die()
-		
 
 func heal() -> void:
 	if is_dead:
@@ -89,6 +126,9 @@ func heal() -> void:
 func die() -> void:
 	is_dead = true
 	print("Player died!")
+	# Stop all movement
+	velocity = Vector2.ZERO
+	
 	# Show the Game Over screen
 	if game_over_screen != null:
 		print("Game Over screen found, attempting to show...")
@@ -98,7 +138,7 @@ func die() -> void:
 		else:
 			print("Error: Game Over screen doesn't have show_game_over method!")
 	else:
-		print("Error: Game Over screen is null! Check if the path /root/world-1/GameOver2 is correct")
+		print("Error: Game Over screen is null! Check if the path is correct")
 
 func update_hearts_ui() -> void:
 	if hearts_ui != null:
