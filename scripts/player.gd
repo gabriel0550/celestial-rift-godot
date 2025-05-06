@@ -13,12 +13,24 @@ var hearts_ui: Control = null
 var game_over_screen: Control = null
 var facing_right: bool = true  # Track which way the player is facing
 
+# Damage effect variables
+var is_flashing: bool = false
+var flash_timer: float = 0.0
+const FLASH_DURATION: float = 0.5  # Total duration of the flash effect
+const FLASH_INTERVAL: float = 0.1  # Time between each flash
+var animated_sprite: AnimatedSprite2D
+
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
 	# Add the player to the "player" group
 	add_to_group("player")
 	print("Player added to 'player' group")
+	
+	# Get the animated sprite node
+	animated_sprite = $AnimatedSprite2D
+	if animated_sprite == null:
+		print("Warning: AnimatedSprite2D not found!")
 	
 	# Find the hearts UI in the scene
 	hearts_ui = get_node("/root/world-1/UI/HeartsUI")
@@ -69,6 +81,20 @@ func _physics_process(delta: float) -> void:
 		soltar_poder()
    
 	move_and_slide()
+	
+	# Update flash effect
+	if is_flashing:
+		flash_timer += delta
+		if flash_timer >= FLASH_DURATION:
+			is_flashing = false
+			flash_timer = 0.0
+			if animated_sprite:
+				animated_sprite.modulate = Color(1, 1, 1)  # Reset to normal color
+		else:
+			# Flash effect
+			if animated_sprite:
+				var flash_value = sin(flash_timer * PI / FLASH_INTERVAL) > 0
+				animated_sprite.modulate = Color(2, 2, 2) if flash_value else Color(1, 1, 1)
 
 # Health system functions
 func take_damage() -> void:
@@ -79,6 +105,10 @@ func take_damage() -> void:
 	current_hearts -= 1
 	print("Player took damage! Current hearts: ", current_hearts)
 	update_hearts_ui()
+	
+	# Start flash effect
+	is_flashing = true
+	flash_timer = 0.0
 	
 	if current_hearts <= 0:
 		die()
