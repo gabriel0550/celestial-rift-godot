@@ -27,11 +27,12 @@ func _ready() -> void:
 		print("HeartsUI found successfully")
 		
 	# Find the Game Over screen in the scene
-	game_over_screen = get_node("../GameOver")
+	game_over_screen = get_node("/root/world-1/GameOver2")
 	if game_over_screen == null:
-		print("Warning: GameOver screen not found!")
+		print("Warning: GameOver2 screen not found! Make sure to add the GameOver2 scene to your world-1 scene at the path /root/world-1/GameOver2")
+		# We'll continue without the game over screen
 	else:
-		print("GameOver screen found successfully")
+		print("GameOver2 screen found successfully")
 		
 	# Update the hearts UI when the game starts
 	update_hearts_ui()
@@ -73,6 +74,7 @@ func take_damage() -> void:
 	
 	if current_hearts <= 0:
 		die()
+		
 
 func heal() -> void:
 	if is_dead:
@@ -88,10 +90,15 @@ func die() -> void:
 	is_dead = true
 	print("Player died!")
 	# Show the Game Over screen
-	if game_over_screen != null and game_over_screen.has_method("show_game_over"):
-		game_over_screen.show_game_over()
+	if game_over_screen != null:
+		print("Game Over screen found, attempting to show...")
+		if game_over_screen.has_method("show_game_over"):
+			game_over_screen.show_game_over()
+			print("Game Over screen shown successfully")
+		else:
+			print("Error: Game Over screen doesn't have show_game_over method!")
 	else:
-		print("Warning: Cannot show Game Over screen!")
+		print("Error: Game Over screen is null! Check if the path /root/world-1/GameOver2 is correct")
 
 func update_hearts_ui() -> void:
 	if hearts_ui != null:
@@ -111,7 +118,7 @@ func soltar_poder() -> void:
 	print("Tentando soltar o poder...")  
 	
 	if poder_scene == null:
-		print("Erro: poder_scene não está definido!")
+		print("Erro: poder_scene não está definido! Por favor, defina a cena do poder no editor.")
 		return
 
 	var poder = poder_scene.instantiate()
@@ -119,12 +126,20 @@ func soltar_poder() -> void:
 		print("Erro ao instanciar o poder!")
 		return
 
-	get_parent().add_child(poder)
+	# Get the parent node safely
+	var parent = get_parent()
+	if parent == null:
+		print("Erro: Nó pai não encontrado!")
+		return
+
+	parent.add_child(poder)
 	poder.position = position + Vector2(10 * sign(scale.x), -10)
 	
 	# Set the direction as a Vector2 based on player's facing direction
-	poder.direction = Vector2(sign(scale.x), 0)
-	poder.is_enemy_power = false  # Make sure it's marked as player's power
+	if poder.has_method("set_direction"):
+		poder.set_direction(Vector2(sign(scale.x), 0))
+	if poder.has_method("set_is_enemy_power"):
+		poder.set_is_enemy_power(false)  # Make sure it's marked as player's power
 
 	print("Poder criado na posição:", poder.position)
 

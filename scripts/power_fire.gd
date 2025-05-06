@@ -17,10 +17,12 @@ func _process(delta: float) -> void:
 	# Movimento do poder
 	position += direction * speed * delta
 
-	# Se sair da tela, destrói o poder para evitar consumo de memória
-	var viewport_rect = get_viewport_rect()
-	if position.x > viewport_rect.size.x or position.x < 0 or \
-	   position.y > viewport_rect.size.y or position.y < 0:
+	# Se sair do mapa, destrói o poder para evitar consumo de memória
+	# Substitua os valores abaixo pelo tamanho real do seu mapa, se necessário
+	var map_width = 2000
+	var map_height = 600
+	if position.x > map_width or position.x < 0 or \
+	   position.y > map_height or position.y < 0:
 		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:

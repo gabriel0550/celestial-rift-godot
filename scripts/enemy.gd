@@ -26,8 +26,11 @@ func _ready() -> void:
 		print("Warning: Player not found!")
 	# Add enemy to the enemy group
 	add_to_group("enemy")
-	# Play walk animation by default
-	$AnimationPlayer.play("andar_demonio")
+	# Play idle animation by default
+	$AnimationPlayer.play("idle")
+	# Connect animation finished signal only if not already connected
+	if not $AnimationPlayer.is_connected("animation_finished", Callable(self, "_on_animation_finished")):
+		$AnimationPlayer.connect("animation_finished", Callable(self, "_on_animation_finished"))
 
 func _physics_process(delta: float) -> void:
 	if player == null:
@@ -39,9 +42,11 @@ func _physics_process(delta: float) -> void:
 		
 	# Calculate distance to player
 	var distance_to_player = position.distance_to(player.position)
+	print("Distance to player: ", distance_to_player)
 	
 	# If player is within attack range, start attacking
 	if distance_to_player <= ATTACK_RANGE and not is_attacking:
+		print("Player in range, starting attack!")
 		is_attacking = true
 		attack_timer = ATTACK_COOLDOWN
 		cast_powers()
@@ -51,6 +56,7 @@ func _physics_process(delta: float) -> void:
 		attack_timer -= delta
 		if attack_timer <= 0:
 			is_attacking = false
+			print("Attack cooldown finished")
 	
 	# Walk back and forth when not attacking
 	if not is_attacking:
@@ -60,20 +66,27 @@ func _physics_process(delta: float) -> void:
 		
 		velocity.x = SPEED * walk_direction
 		move_and_slide()
-		# Ensure walk animation is playing
-		if not $AnimationPlayer.is_playing() or $AnimationPlayer.current_animation != "andar_demonio":
-			$AnimationPlayer.play("andar_demonio")
+		# Play walk animation if moving, idle if not
+		if abs(velocity.x) > 0:
+			if $AnimationPlayer.current_animation != "walk":
+				$AnimationPlayer.play("walk")
+		else:
+			if $AnimationPlayer.current_animation != "idle":
+				$AnimationPlayer.play("idle")
+	else:
+		if $AnimationPlayer.current_animation != "idle":
+			$AnimationPlayer.play("idle")
 
 func cast_powers() -> void:
 	if power_scene == null:
 		print("Error: Power scene not set!")
 		return
 	
+	print("Casting powers!")
 	# Define the positions for the 5 powers relative to the enemy
 	var power_positions = [
 		Vector2(-30, 0),  # Left
 		Vector2(30, 0),   # Right
-		Vector2(0, -30),  # Up
 		Vector2(-20, -20), # Up-left
 		Vector2(20, -20)   # Up-right
 	]
@@ -92,10 +105,16 @@ func cast_powers() -> void:
 func take_damage() -> void:
 	current_health -= 1
 	print("Enemy took damage! Current health: ", current_health)
-	
+	if current_health > 0:
+		$AnimationPlayer.play("take_hit")
 	if current_health <= 0:
 		die()
 
 func die() -> void:
-	queue_free()
-	print("Enemy died!") 
+	print("Enemy died!")
+	$AnimationPlayer.play("death")
+	set_physics_process(false) # Stop movement and actions
+
+func _on_animation_finished(anim_name: String) -> void:
+	if anim_name == "death":
+		queue_free() 

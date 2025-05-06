@@ -8,7 +8,7 @@ func _ready() -> void:
 
 # Function to update hearts visibility
 func update_hearts(current_hearts: int) -> void:
-	var hearts_container = $HeartsContainer
+	var hearts_container = get_node("HeartsContainer")
 	if hearts_container:
 		print("Updating hearts UI. Current hearts: ", current_hearts)
 		for i in range(hearts_container.get_child_count()):

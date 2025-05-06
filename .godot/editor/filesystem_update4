@@ -1,6 +1,15 @@
-res://levels/world_1.tscn
-res://Botão_default.tres
 res://scenes/enemy.tscn
+res://Botão_default.tres
+res://levels/world_1.tscn
 res://actors/player.tscn
 res://powers/fire.tscn
 res://menu_inicial.tscn
+res://scripts/power_fire.gd
+res://scripts/player.gd
+res://scripts/enemy.gd
+res://scenes/hearts_ui.tscn
+res://scripts/hearts_ui.gd
+res://scenes/GameOver.tscn
+res://scripts/game_over.gd
+res://scenes/GameOver2.tscn
+res://scripts/game_over2.gd

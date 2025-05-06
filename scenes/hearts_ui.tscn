@@ -15,35 +15,34 @@ offset_bottom = 48.0
 grow_horizontal = 2
 script = ExtResource("1_2k4m3")
 
-[node name="HeartsContainer2das[" type="HBoxContainer" parent="."]
+[node name="HeartsContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.6
 anchor_bottom = 1.0
-offset_left = -880.0
-offset_top = -859.0
-offset_right = 527.0
-offset_bottom = -352.0
+offset_left = -993.0
+offset_top = -1111.0
+offset_right = 414.0
+offset_bottom = -604.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-script = ExtResource("1_2k4m3")
 
-[node name="TextureRect" type="TextureRect" parent="HeartsContainer2das["]
+[node name="TextureRect" type="TextureRect" parent="HeartsContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("2_o0f0s")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="HeartsContainer2das["]
+[node name="TextureRect2" type="TextureRect" parent="HeartsContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("2_o0f0s")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="HeartsContainer2das["]
+[node name="TextureRect3" type="TextureRect" parent="HeartsContainer"]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("2_o0f0s")

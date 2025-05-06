@@ -82,3 +82,10 @@ autoplay = "ground"
 
 [node name="collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6ol04")
+
+[node name="Camera" type="Camera2D" parent="."]
+zoom = Vector2(1.5, 1.5)
+limit_left = 0
+limit_top = 0
+drag_vertical_offset = -0.8
+editor_draw_limits = true
