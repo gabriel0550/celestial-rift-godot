@@ -1,16 +1,16 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1746559410
-BG_ANIMADO.ogv::VideoStreamTheora::6263697096122004656::1746558240::0::1::::<><><>0<>0<><>::
+::res://::1746561157
+BG_ANIMADO.ogv::VideoStreamTheora/VideoStreamTheora::6263697096122004656::1746558240::0::1::::<><><>0<>0<><>::
 BG_MENU.png::CompressedTexture2D/CompressedTexture2D::4622541034329646050::1746558240::1746559546::1::::<><><>0<>0<>45d08934ce43958bee0baa5f05f4ee16<>res://.godot/imported/BG_MENU.png-f4233bccb08bbc88b400c22e14091009.ctex::
-Botão_default.tres::Theme::4412829637895537387::1746558240::0::1::::<><><>0<>0<><>::uid://c5imtc2ksu2y5::::res://Enchanted Land fonte.otf
+Botão_default.tres::Theme/Theme::4412829637895537387::1746558240::0::1::::<><><>0<>0<><>::uid://c5imtc2ksu2y5::::res://Enchanted Land fonte.otf
 Enchanted Land fonte.otf::FontFile/FontFile::6895784379792688378::1746558240::1746559541::1::::<><><>0<>0<>db7c9e23147defa0f46c8fcdb99c7562<>res://.godot/imported/Enchanted Land fonte.otf-aca4354867b332f47dcd3fa3cc22acae.fontdata::
 icon.svg::CompressedTexture2D/CompressedTexture2D::5168457037274154095::1746558241::1746559544::1::::<><><>0<>0<>6eaa3425993f15d7fab2a9924272790a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-menu_inicial.tscn::PackedScene::6742895212658859191::1746558241::0::1::::<><><>0<>0<><>::uid://0atnvntntm4d::::res://scripts/menu_inicial.gd<>uid://cvigf8q5u8h5q::::res://BG_ANIMADO.ogv<>uid://ddf7drud2kn7h::::res://Title_Screen/CELESTIAL RIFT - LOGO 2.png<>uid://b34uwojuhjawh::::res://Botão_default.tres<>uid://u71814fdtmf0::::res://videoplayback.mp3
-README.md::TextFile::-1::1746558240::0::1::::<><><>0<>0<><>::
+menu_inicial.tscn::PackedScene/PackedScene::6742895212658859191::1746558241::0::1::::<><><>0<>0<><>::uid://0atnvntntm4d::::res://scripts/menu_inicial.gd<>uid://cvigf8q5u8h5q::::res://BG_ANIMADO.ogv<>uid://ddf7drud2kn7h::::res://Title_Screen/CELESTIAL RIFT - LOGO 2.png<>uid://b34uwojuhjawh::::res://Botão_default.tres<>uid://u71814fdtmf0::::res://videoplayback.mp3
+README.md::TextFile/TextFile::-1::1746558240::0::1::::<><><>0<>0<><>::
 videoplayback.mp3::AudioStreamMP3/AudioStreamMP3::1471475944539728923::1746558241::1746559541::1::::<><><>0<>0<>4ec0c1bb41d70067aaefd2b7374cbf49<>res://.godot/imported/videoplayback.mp3-c709a2cb73d9ed09f7d60515ead01c61.mp3str::
 ::res://actors/::1746558240
-player.tscn::PackedScene::4799919433943038428::1746558240::0::1::::<><><>0<>0<><>::uid://3ufiwxyboiji::::res://scripts/player.gd<>uid://b3wflgb273fmq::::res://assets/personagem 2.png
-::res://assets/::1746559410
+player.tscn::PackedScene/PackedScene::4799919433943038428::1746558240::0::1::::<><><>0<>0<><>::uid://3ufiwxyboiji::::res://scripts/player.gd<>uid://b3wflgb273fmq::::res://assets/personagem 2.png
+::res://assets/::1746559544
 1.png::CompressedTexture2D/CompressedTexture2D::5429982604174192052::1746558240::1746559544::1::::<><><>0<>0<>db58753af3076cc665807489981f637c<>res://.godot/imported/1.png-c9a8e694d0d275633d567702fb508122.ctex::
 2.png::CompressedTexture2D/CompressedTexture2D::4385731249487230660::1746558240::1746559544::1::::<><><>0<>0<>39e712bc6c284ec36c41e299060b26f6<>res://.godot/imported/2.png-f79589217c9a74fd0d3207c8643de526.ctex::
 3.png::CompressedTexture2D/CompressedTexture2D::5474165701745493680::1746558240::1746559544::1::::<><><>0<>0<>f368fb839eeb324a9371b9bf52e3214d<>res://.godot/imported/3.png-6b09eb25451f83adc8019315367ea1f5.ctex::
@@ -28,18 +28,18 @@ GandalfHardcore Hell Tiles 32x32.png::CompressedTexture2D/CompressedTexture2D::1
 GandalfHardcore Warrior.png::CompressedTexture2D/CompressedTexture2D::907170292220445564::1746558240::1746559543::1::::<><><>0<>0<>e226d9aef9763e5d4fc54a320ad84a23<>res://.godot/imported/GandalfHardcore Warrior.png-4a510af3934b970b4081b77804af1695.ctex::
 pedra_de_poder.png::CompressedTexture2D/CompressedTexture2D::5080610444724691668::1746558241::1746559543::1::::<><><>0<>0<>52e26e6b0b139b61dabcc6aee7bdd1d4<>res://.godot/imported/pedra_de_poder.png-3a8364432965c47367db71a82ae78000.ctex::
 personagem 2.png::CompressedTexture2D/CompressedTexture2D::4397448162799640252::1746558241::1746559543::1::::<><><>0<>0<>d2598a76b894a521af0467f557cbe8c8<>res://.godot/imported/personagem 2.png-6ed40ad213b5adc6ba9ab41832c71bd8.ctex::
-power_stone.gd::GDScript::5702663643358815057::1746558241::0::1::::<>Area2D<><>0<>0<><>::
-power_stone.tscn::PackedScene::-1::1746558241::0::1::::<><><>0<>0<><>::
+power_stone.gd::GDScript/GDScript::5702663643358815057::1746558241::0::1::::<>Area2D<><>0<>0<><>::
+power_stone.tscn::PackedScene/PackedScene::-1::1746558241::0::1::::<><><>0<>0<><>::
 —Pngtree—pixel love_3279134.png::CompressedTexture2D/CompressedTexture2D::8843308612920164822::1746558241::1746559543::1::::<><><>0<>0<>c9d86b86e0a4fb53077493254db1041b<>res://.godot/imported/—Pngtree—pixel love_3279134.png-b130dccbec4dc1bfcd359089f0e67731.ctex::
 ::res://assets/enemy_fire/::1746558241
-::res://assets/enemy_fire/01_demon_idle/::1746559410
+::res://assets/enemy_fire/01_demon_idle/::1746559544
 demon_idle_1.png::CompressedTexture2D/CompressedTexture2D::614888564118834519::1746558240::1746559543::1::::<><><>0<>0<>a99efd38623caa77f576a5a37362470d<>res://.godot/imported/demon_idle_1.png-7366ec729460ac201105d27632879a08.ctex::
 demon_idle_2.png::CompressedTexture2D/CompressedTexture2D::4083956392274719526::1746558240::1746559544::1::::<><><>0<>0<>ded9bb4befcb09e2c48a4de22195f325<>res://.godot/imported/demon_idle_2.png-1c72d2120835a851fc575d17911a0cef.ctex::
 demon_idle_3.png::CompressedTexture2D/CompressedTexture2D::1587090125099283587::1746558240::1746559544::1::::<><><>0<>0<>014baf9efd8e6a7a4dfe3377363f5ce6<>res://.godot/imported/demon_idle_3.png-6cf7abb245c08c2af82093f3eecac500.ctex::
 demon_idle_4.png::CompressedTexture2D/CompressedTexture2D::2037672628848519247::1746558240::1746559544::1::::<><><>0<>0<>8d27d6a30e8aff2ec2be5ba497a42371<>res://.godot/imported/demon_idle_4.png-e1243a6d071b505f9e0a520c8a4e4db9.ctex::
 demon_idle_5.png::CompressedTexture2D/CompressedTexture2D::5153425062035714503::1746558240::1746559544::1::::<><><>0<>0<>984d8fdfcbd9ddaff9f077f00337ea01<>res://.godot/imported/demon_idle_5.png-2f6eaf056c0ef807c7a233ca0f9aa2d6.ctex::
 demon_idle_6.png::CompressedTexture2D/CompressedTexture2D::744552308822315390::1746558240::1746559544::1::::<><><>0<>0<>4145c46b10a26fcfc0f1181d27dbaf93<>res://.godot/imported/demon_idle_6.png-c071782d012586bae9235aa3c4fe5887.ctex::
-::res://assets/enemy_fire/02_demon_walk/::1746559410
+::res://assets/enemy_fire/02_demon_walk/::1746559544
 demon_walk_1.png::CompressedTexture2D/CompressedTexture2D::252999262192565455::1746558240::1746559544::1::::<><><>0<>0<>db4477969c52a051b8d9a4eaafce5853<>res://.godot/imported/demon_walk_1.png-14513062a593692491ef816526b8ca5c.ctex::
 demon_walk_2.png::CompressedTexture2D/CompressedTexture2D::5671065032121221277::1746558241::1746559544::1::::<><><>0<>0<>a6b777bbe64340f83047a0bfb1d2558a<>res://.godot/imported/demon_walk_2.png-592762cec9d87053c4678d38c8752296.ctex::
 demon_walk_3.png::CompressedTexture2D/CompressedTexture2D::2697126983473645386::1746558241::1746559544::1::::<><><>0<>0<>d9b0f44e429d4abba94bf81841e2579d<>res://.godot/imported/demon_walk_3.png-b6f56e8fc81011539afbbc3e449b08d9.ctex::
@@ -52,7 +52,7 @@ demon_walk_9.png::CompressedTexture2D/CompressedTexture2D::7481895708719116293::
 demon_walk_10.png::CompressedTexture2D/CompressedTexture2D::724718525347847583::1746558241::1746559544::1::::<><><>0<>0<>abe479895598909357f164c55f14ef08<>res://.godot/imported/demon_walk_10.png-0f1f2a562b33535e2a8159467ebd6e25.ctex::
 demon_walk_11.png::CompressedTexture2D/CompressedTexture2D::2865160358183819031::1746558241::1746559544::1::::<><><>0<>0<>0244576d6ac9928495992cbea7f0f3f7<>res://.godot/imported/demon_walk_11.png-a55f1a78ae1ab429a466174284333ceb.ctex::
 demon_walk_12.png::CompressedTexture2D/CompressedTexture2D::4440050393721562372::1746558241::1746559544::1::::<><><>0<>0<>147d926c10f843a3965894abe4805ee0<>res://.godot/imported/demon_walk_12.png-22f96ef80c103faf5395f2034a3e963d.ctex::
-::res://assets/enemy_fire/03_demon_cleave/::1746559410
+::res://assets/enemy_fire/03_demon_cleave/::1746559544
 demon_cleave_1.png::CompressedTexture2D/CompressedTexture2D::2866527819090156152::1746558241::1746559544::1::::<><><>0<>0<>89cb12428f5eb2856541901563086761<>res://.godot/imported/demon_cleave_1.png-7f02d273ab65b9d2a7353bf00b3c2e5b.ctex::
 demon_cleave_2.png::CompressedTexture2D/CompressedTexture2D::4524737094259562078::1746558241::1746559544::1::::<><><>0<>0<>09f680b1a4084da237662c3e639dc47b<>res://.godot/imported/demon_cleave_2.png-2beaa1c49d70c35b7a3ff93df15ea11b.ctex::
 demon_cleave_3.png::CompressedTexture2D/CompressedTexture2D::4347116437523273525::1746558241::1746559544::1::::<><><>0<>0<>bfdbcc8d758d5e36b2fce3125bf1c12f<>res://.godot/imported/demon_cleave_3.png-9b053772a4a31ba9a97d99c6bf93c917.ctex::
@@ -68,13 +68,13 @@ demon_cleave_12.png::CompressedTexture2D/CompressedTexture2D::459039191232704826
 demon_cleave_13.png::CompressedTexture2D/CompressedTexture2D::6508682873415303332::1746558241::1746559542::1::::<><><>0<>0<>22516f133e876f37fa2ca04c7da1228a<>res://.godot/imported/demon_cleave_13.png-8f6c36e859fdff593f9f1e2eba6e451c.ctex::
 demon_cleave_14.png::CompressedTexture2D/CompressedTexture2D::6641537250483721992::1746558241::1746559542::1::::<><><>0<>0<>c1e465e86fe14eac0d7de9ed19ada1e5<>res://.godot/imported/demon_cleave_14.png-4a83e772248894023ab788b569025e96.ctex::
 demon_cleave_15.png::CompressedTexture2D/CompressedTexture2D::6802919120109319672::1746558241::1746559542::1::::<><><>0<>0<>32c39a7bb9fc725938f174c6eb38adf2<>res://.godot/imported/demon_cleave_15.png-dea3d55c2cf4e9f04d8a1ceccbe1714d.ctex::
-::res://assets/enemy_fire/04_demon_take_hit/::1746559410
+::res://assets/enemy_fire/04_demon_take_hit/::1746559542
 demon_take_hit_1.png::CompressedTexture2D/CompressedTexture2D::8190646557022207966::1746558241::1746559542::1::::<><><>0<>0<>803ca993bd097a5271d987b3ee7ef447<>res://.godot/imported/demon_take_hit_1.png-1aa3f8a0ae76e2696e9cd148fadf3345.ctex::
 demon_take_hit_2.png::CompressedTexture2D/CompressedTexture2D::6395025179513568390::1746558241::1746559542::1::::<><><>0<>0<>a9c0f783678622eb1d99d998bc8f480b<>res://.godot/imported/demon_take_hit_2.png-eff487b2ae5865c0c073412a98845946.ctex::
 demon_take_hit_3.png::CompressedTexture2D/CompressedTexture2D::6872023378030559784::1746558241::1746559542::1::::<><><>0<>0<>2398f6a76f0a6215993c81d2a4fc3910<>res://.godot/imported/demon_take_hit_3.png-1af199204cd1df6592b24b4ee0459247.ctex::
 demon_take_hit_4.png::CompressedTexture2D/CompressedTexture2D::5222835096173695258::1746558241::1746559542::1::::<><><>0<>0<>feb13ae5740618f89b3112a5703fa253<>res://.godot/imported/demon_take_hit_4.png-62129492959a9bc9a39aea043faf1ea8.ctex::
 demon_take_hit_5.png::CompressedTexture2D/CompressedTexture2D::6715554685672098078::1746558241::1746559541::1::::<><><>0<>0<>c0c5f959e0f1692d8e28e1d1b4376731<>res://.godot/imported/demon_take_hit_5.png-7798d363f6da9b40e45233ffdf4ec258.ctex::
-::res://assets/enemy_fire/05_demon_death/::1746559410
+::res://assets/enemy_fire/05_demon_death/::1746559543
 demon_death_1.png::CompressedTexture2D/CompressedTexture2D::4399727375130809550::1746558241::1746559541::1::::<><><>0<>0<>de8a7f25e5af9ba4a8c98cb396f49438<>res://.godot/imported/demon_death_1.png-916af77283ce2f702f90b1d21078a18c.ctex::
 demon_death_2.png::CompressedTexture2D/CompressedTexture2D::1540237675756215761::1746558241::1746559541::1::::<><><>0<>0<>1bbee65bafe14b39bd73be261657cf4e<>res://.godot/imported/demon_death_2.png-b1efb32e92b5e55b89f9f0fa0950627f.ctex::
 demon_death_3.png::CompressedTexture2D/CompressedTexture2D::7726061958607785157::1746558241::1746559541::1::::<><><>0<>0<>058c19788b393aee0774d439f17e88c6<>res://.godot/imported/demon_death_3.png-43c3ed3ba06433b88a824e6a264c0ef0.ctex::
@@ -97,33 +97,35 @@ demon_death_19.png::CompressedTexture2D/CompressedTexture2D::4322579286398834729
 demon_death_20.png::CompressedTexture2D/CompressedTexture2D::4849680801981024872::1746558241::1746559542::1::::<><><>0<>0<>68209d8d01ccb18dc74cb10ce6236881<>res://.godot/imported/demon_death_20.png-7b15fd74145f89e992be7c5d628ed1dd.ctex::
 demon_death_21.png::CompressedTexture2D/CompressedTexture2D::7767297299785984861::1746558241::1746559542::1::::<><><>0<>0<>ebc30e06ea486ad6e4aa15ac9ebe16b0<>res://.godot/imported/demon_death_21.png-9535ddad0ef1d485eef900aa06137f04.ctex::
 demon_death_22.png::CompressedTexture2D/CompressedTexture2D::2467726612457898666::1746558241::1746559542::1::::<><><>0<>0<>aeb4089ece75a5122617584b8fef3e6e<>res://.godot/imported/demon_death_22.png-5dc933cf0f4e3e07cc7c724951a2a96e.ctex::
-::res://assets/GandalfHardcore Hell background/::1746559410
+::res://assets/GandalfHardcore Hell background/::1746559542
 back layer.png::CompressedTexture2D/CompressedTexture2D::7304000058740172669::1746558240::1746559542::1::::<><><>0<>0<>813d8d4a04d4df0e070e70d8dc644dfd<>res://.godot/imported/back layer.png-a3396dceaf11c5b37bbfea06fdc22f7e.ctex::
 Background layer.png::CompressedTexture2D/CompressedTexture2D::5488628677226170459::1746558240::1746559542::1::::<><><>0<>0<>0cfaea4f52342ebdc7ec5a4226c0a583<>res://.godot/imported/Background layer.png-95e5049d474c2280387d0e50a945713c.ctex::
 Background preview.png::CompressedTexture2D/CompressedTexture2D::2790036388042281135::1746558240::1746559542::1::::<><><>0<>0<>9b12f57f19d9ace5b7d69877c27af599<>res://.godot/imported/Background preview.png-e24a599844da2b054804328467e163d5.ctex::
 front layer.png::CompressedTexture2D/CompressedTexture2D::865729856164123343::1746558240::1746559542::1::::<><><>0<>0<>ebf14780b0c5e72293235755708ae7af<>res://.godot/imported/front layer.png-2f3a941f15cd9688a9d1a68ae0c3c693.ctex::
 middle layer.png::CompressedTexture2D/CompressedTexture2D::7275533123016475279::1746558240::1746559542::1::::<><><>0<>0<>4094c478d9d007a573b0a07f6ac8a2f5<>res://.godot/imported/middle layer.png-15065bec80f66524a4cf7204964b9ded.ctex::
-::res://levels/::1746559410
-world_1.tscn::PackedScene::4548520013405749827::1746559410::0::1::::<><><>0<>0<><>::uid://rw5ioyf8qfbp::::res://assets/GandalfHardcore Hell Tiles 32x32.png<>uid://0hjackm4icie::::res://assets/GandalfHardcore Hell Tiles 32x32 chão.png<>uid://b5su0suyvk4rj::::res://assets/GandalfHardcore Hell Tiles 32x32 seputura .png<>uid://cand8bnvmxf4w::::res://actors/player.tscn<>uid://hp3k0pe0x6w8::::res://powers/fire.tscn<>uid://cjmlaxknaufgu::::res://assets/1.png<>uid://b3qql8787p2q7::::res://assets/2.png<>uid://cj8yyd8gxyxqe::::res://assets/3.png<>uid://d3mf1orxdifd8::::res://assets/4.png<>uid://c02dt65lfie1g::::res://scripts/pedra_pegar.gd<>uid://36wucugoghnj::::res://assets/baixados (1).png<>uid://b6x8g0v0j5o1y::::res://scenes/hearts_ui.tscn<>uid://dpd33rixuthok::::res://scripts/thorn.gd<>uid://cl2wsgmwpj0ur::::res://scenes/GameOver.tscn<>uid://c7o2ntvmmou8e::::res://scripts/game_over.gd<>uid://bndcymrejoy5a::::res://assets/game-over.png<>uid://cetxp6tx5tysp::::res://scenes/GameOver2.tscn<>uid://c1jekgrsslwpk::::res://scenes/enemy.tscn
+::res://levels/::1746561057
+world_1.tscn::PackedScene::4548520013405749827::1746561057::0::1::::<><><>0<>0<><>::uid://rw5ioyf8qfbp::::res://assets/GandalfHardcore Hell Tiles 32x32.png<>uid://0hjackm4icie::::res://assets/GandalfHardcore Hell Tiles 32x32 chão.png<>uid://b5su0suyvk4rj::::res://assets/GandalfHardcore Hell Tiles 32x32 seputura .png<>uid://cand8bnvmxf4w::::res://actors/player.tscn<>uid://hp3k0pe0x6w8::::res://powers/fire.tscn<>uid://cjmlaxknaufgu::::res://assets/1.png<>uid://b3qql8787p2q7::::res://assets/2.png<>uid://cj8yyd8gxyxqe::::res://assets/3.png<>uid://d3mf1orxdifd8::::res://assets/4.png<>uid://c02dt65lfie1g::::res://scripts/pedra_pegar.gd<>uid://36wucugoghnj::::res://assets/baixados (1).png<>uid://b6x8g0v0j5o1y::::res://scenes/hearts_ui.tscn<>uid://dpd33rixuthok::::res://scripts/thorn.gd<>uid://cl2wsgmwpj0ur::::res://scenes/GameOver.tscn<>uid://c7o2ntvmmou8e::::res://scripts/game_over.gd<>uid://bndcymrejoy5a::::res://assets/game-over.png<>uid://cetxp6tx5tysp::::res://scenes/GameOver2.tscn<>uid://c1jekgrsslwpk::::res://scenes/enemy.tscn
 ::res://powers/::1746558241
-enemy_fire.tscn::PackedScene::301564939904817825::1746558241::0::1::::<><><>0<>0<><>::res://scripts/power_fire.gd<>res://assets/fire_1.svg
-fire.tscn::PackedScene::524006841985543825::1746558241::0::1::::<><><>0<>0<><>::uid://fgagwbkjerdg::::res://scripts/power_fire.gd<>uid://c2blub7b1olwc::::res://assets/fire_1.svg
-::res://scenes/::1746559410
-enemy.tscn::PackedScene::6616591769915822808::1746559410::0::1::::<><><>0<>0<><>::uid://cgysr388ox2ua::::res://scripts/enemy.gd<>uid://hp3k0pe0x6w8::::res://powers/fire.tscn<>uid://i04eijymr8rj::::res://assets/enemy_fire/01_demon_idle/demon_idle_1.png<>uid://dus4jghfnn5h::::res://assets/enemy_fire/02_demon_walk/demon_walk_1.png<>uid://cm2du3cyvrvwf::::res://assets/enemy_fire/02_demon_walk/demon_walk_2.png<>uid://beorj1gra2i6u::::res://assets/enemy_fire/02_demon_walk/demon_walk_3.png<>uid://bnedhbfxm8ncg::::res://assets/enemy_fire/02_demon_walk/demon_walk_4.png<>uid://btwg8x50km2qk::::res://assets/enemy_fire/02_demon_walk/demon_walk_5.png<>uid://cbp3k8ucejsgs::::res://assets/enemy_fire/02_demon_walk/demon_walk_6.png<>uid://bw74p1bpasnfi::::res://assets/enemy_fire/02_demon_walk/demon_walk_7.png<>uid://bdnodvgm2o40o::::res://assets/enemy_fire/02_demon_walk/demon_walk_8.png<>uid://deujy17vrehmb::::res://assets/enemy_fire/02_demon_walk/demon_walk_9.png<>uid://klcajrp0oou6::::res://assets/enemy_fire/02_demon_walk/demon_walk_10.png<>uid://bg251jadx5n6f::::res://assets/enemy_fire/02_demon_walk/demon_walk_11.png<>uid://b4i18mmovgefk::::res://assets/enemy_fire/02_demon_walk/demon_walk_12.png<>uid://doxu0tpsw40fi::::res://assets/enemy_fire/04_demon_take_hit/demon_take_hit_1.png<>uid://b3xi4qk60myxq::::res://assets/enemy_fire/05_demon_death/demon_death_1.png
-GameOver2.tscn::PackedScene::5094244855668687851::1746559410::0::1::::<><><>0<>0<><>::uid://dg5bk0d0w1ckc::::res://scripts/game_over2.gd<>uid://bndcymrejoy5a::::res://assets/game-over.png
-GameOver.tscn::PackedScene::5602025099593084181::1746558241::0::1::::<><><>0<>0<><>::
-game_over.tscn::PackedScene::4611798015677534604::1746559111::0::1::::<><><>0<>0<><>::res://scripts/game_over.gd
-hearts_ui.tscn::PackedScene::4611771247013957668::1746558241::0::1::::<><><>0<>0<><>::uid://ylvpheqyff3x::::res://scripts/hearts_ui.gd<>uid://dx81aa7w2uysc::::res://assets/—Pngtree—pixel love_3279134.png
-::res://scripts/::1746559304
-collision_dano_1.gd::GDScript::2661525962442153277::1746558241::0::1::::<>Area2D<><>0<>0<><>::
-enemy.gd::GDScript::5244644282829373964::1746558241::0::1::::<>CharacterBody2D<><>0<>0<><>::
-game_over2.gd::GDScript::7642406339345582574::1746558241::0::1::::<>Control<><>0<>0<><>::
-game_over.gd::GDScript::7049449257431914534::1746559304::0::1::::<>Control<><>0<>0<><>::
-hearts_ui.gd::GDScript::1708542620966014731::1746558241::0::1::::<>Control<><>0<>0<><>::
-menu_inicial.gd::GDScript::1755899053088353557::1746558241::0::1::::<>Control<><>0<>0<><>::
-pedra_pegar.gd::GDScript::6583518413833896314::1746558241::0::1::::<>Area2D<><>0<>0<><>::
-player.gd::GDScript::2006894240397724826::1746559531::0::1::::<>CharacterBody2D<><>0<>0<><>::
-power_fire.gd::GDScript::363342357003015776::1746558241::0::1::::<>Area2D<><>0<>0<><>::
-thorn.gd::GDScript::8220038823266650938::1746558241::0::1::::<>Area2D<><>0<>0<><>::
-::res://Title_Screen/::1746559410
+enemy_fire.tscn::PackedScene/PackedScene::301564939904817825::1746558241::0::1::::<><><>0<>0<><>::res://scripts/power_fire.gd<>res://assets/fire_1.svg
+fire.tscn::PackedScene/PackedScene::524006841985543825::1746558241::0::1::::<><><>0<>0<><>::uid://fgagwbkjerdg::::res://scripts/power_fire.gd<>uid://c2blub7b1olwc::::res://assets/fire_1.svg
+::res://scenes/::1746561057
+enemy.tscn::PackedScene::6616591769915822808::1746561057::0::1::::<><><>0<>0<><>::uid://cgysr388ox2ua::::res://scripts/enemy.gd<>uid://hp3k0pe0x6w8::::res://powers/fire.tscn<>uid://i04eijymr8rj::::res://assets/enemy_fire/01_demon_idle/demon_idle_1.png<>uid://dus4jghfnn5h::::res://assets/enemy_fire/02_demon_walk/demon_walk_1.png<>uid://cm2du3cyvrvwf::::res://assets/enemy_fire/02_demon_walk/demon_walk_2.png<>uid://beorj1gra2i6u::::res://assets/enemy_fire/02_demon_walk/demon_walk_3.png<>uid://bnedhbfxm8ncg::::res://assets/enemy_fire/02_demon_walk/demon_walk_4.png<>uid://btwg8x50km2qk::::res://assets/enemy_fire/02_demon_walk/demon_walk_5.png<>uid://cbp3k8ucejsgs::::res://assets/enemy_fire/02_demon_walk/demon_walk_6.png<>uid://bw74p1bpasnfi::::res://assets/enemy_fire/02_demon_walk/demon_walk_7.png<>uid://bdnodvgm2o40o::::res://assets/enemy_fire/02_demon_walk/demon_walk_8.png<>uid://deujy17vrehmb::::res://assets/enemy_fire/02_demon_walk/demon_walk_9.png<>uid://klcajrp0oou6::::res://assets/enemy_fire/02_demon_walk/demon_walk_10.png<>uid://bg251jadx5n6f::::res://assets/enemy_fire/02_demon_walk/demon_walk_11.png<>uid://b4i18mmovgefk::::res://assets/enemy_fire/02_demon_walk/demon_walk_12.png<>uid://doxu0tpsw40fi::::res://assets/enemy_fire/04_demon_take_hit/demon_take_hit_1.png<>uid://b3xi4qk60myxq::::res://assets/enemy_fire/05_demon_death/demon_death_1.png
+enemy_health_bar.tscn::PackedScene::7124024518476149644::1746561136::0::1::::<><><>0<>0<><>::res://scripts/enemy_health_bar.gd
+GameOver2.tscn::PackedScene::5094244855668687851::1746561057::0::1::::<><><>0<>0<><>::uid://dg5bk0d0w1ckc::::res://scripts/game_over2.gd<>uid://bndcymrejoy5a::::res://assets/game-over.png
+GameOver.tscn::PackedScene/PackedScene::5602025099593084181::1746558241::0::1::::<><><>0<>0<><>::
+game_over.tscn::PackedScene/PackedScene::4611798015677534604::1746559852::0::1::::<><><>0<>0<><>::res://scripts/game_over.gd
+hearts_ui.tscn::PackedScene/PackedScene::4611771247013957668::1746558241::0::1::::<><><>0<>0<><>::uid://ylvpheqyff3x::::res://scripts/hearts_ui.gd<>uid://dx81aa7w2uysc::::res://assets/—Pngtree—pixel love_3279134.png
+::res://scripts/::1746560685
+collision_dano_1.gd::GDScript/GDScript::2661525962442153277::1746558241::0::1::::<>Area2D<><>0<>0<><>::
+enemy.gd::GDScript/GDScript::5244644282829373964::1746560547::0::1::::<>CharacterBody2D<><>0<>0<><>::
+enemy_health_bar.gd::GDScript/GDScript::8513383374394601237::1746560037::0::1::::<>Control<><>0<>0<><>::
+game_over2.gd::GDScript/GDScript::7642406339345582574::1746558241::0::1::::<>Control<><>0<>0<><>::
+game_over.gd::GDScript/GDScript::7049449257431914534::1746560685::0::1::::<>Control<><>0<>0<><>::
+hearts_ui.gd::GDScript/GDScript::1708542620966014731::1746558241::0::1::::<>Control<><>0<>0<><>::
+menu_inicial.gd::GDScript/GDScript::1755899053088353557::1746558241::0::1::::<>Control<><>0<>0<><>::
+pedra_pegar.gd::GDScript/GDScript::6583518413833896314::1746558241::0::1::::<>Area2D<><>0<>0<><>::
+player.gd::GDScript/GDScript::2006894240397724826::1746559844::0::1::::<>CharacterBody2D<><>0<>0<><>::
+power_fire.gd::GDScript/GDScript::363342357003015776::1746558241::0::1::::<>Area2D<><>0<>0<><>::
+thorn.gd::GDScript/GDScript::8220038823266650938::1746558241::0::1::::<>Area2D<><>0<>0<><>::
+::res://Title_Screen/::1746559542
 CELESTIAL RIFT - LOGO 2.png::CompressedTexture2D/CompressedTexture2D::7382099695879778011::1746558240::1746559542::1::::<><><>0<>0<>59a125b0e1625dafad3ce1da2015b56b<>res://.godot/imported/CELESTIAL RIFT - LOGO 2.png-355a1bea3a6120b115131df2b47cddb3.ctex::

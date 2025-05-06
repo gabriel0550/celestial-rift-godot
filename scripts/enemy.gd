@@ -17,6 +17,14 @@ var max_health = 5
 var current_health = max_health
 var health_bar: Control = null
 
+# Damage flash effect
+var is_flashing = false
+var flash_timer = 0.0
+const FLASH_DURATION = 0.2  # Duration of each flash
+const FLASH_COUNT = 3      # Number of flashes
+var flash_count = 0
+var sprite: Sprite2D
+
 # Get gravity from project settings
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -41,6 +49,11 @@ func _ready() -> void:
 		health_bar.update_health(current_health, max_health)
 	else:
 		print("Warning: Could not load health bar scene!")
+	
+	# Get the sprite node
+	sprite = $Sprite2D
+	if sprite == null:
+		print("Warning: Sprite2D node not found!")
 
 func _physics_process(delta: float) -> void:
 	if player == null:
@@ -87,6 +100,20 @@ func _physics_process(delta: float) -> void:
 		if $AnimationPlayer.current_animation != "idle":
 			$AnimationPlayer.play("idle")
 
+func _process(delta: float) -> void:
+	# Handle damage flash effect
+	if is_flashing and sprite != null:
+		flash_timer -= delta
+		if flash_timer <= 0:
+			flash_count += 1
+			if flash_count >= FLASH_COUNT * 2:  # Multiply by 2 because we need on/off for each flash
+				is_flashing = false
+				sprite.modulate = Color(1, 1, 1, 1)  # Reset to normal
+			else:
+				# Toggle between white and normal
+				sprite.modulate = Color(2, 2, 2, 1) if flash_count % 2 == 0 else Color(1, 1, 1, 1)
+				flash_timer = FLASH_DURATION
+
 func cast_powers() -> void:
 	if power_scene == null:
 		print("Error: Power scene not set!")
@@ -115,6 +142,12 @@ func cast_powers() -> void:
 func take_damage() -> void:
 	current_health -= 1
 	print("Enemy took damage! Current health: ", current_health)
+	
+	# Start damage flash effect
+	if sprite != null:
+		is_flashing = true
+		flash_timer = FLASH_DURATION
+		flash_count = 0
 	
 	# Update health bar
 	if health_bar:
