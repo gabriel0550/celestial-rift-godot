@@ -15,6 +15,7 @@ var walk_distance = 0.0
 # Health system
 var max_health = 5
 var current_health = max_health
+var health_bar: Control = null
 
 # Get gravity from project settings
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -31,6 +32,15 @@ func _ready() -> void:
 	# Connect animation finished signal only if not already connected
 	if not $AnimationPlayer.is_connected("animation_finished", Callable(self, "_on_animation_finished")):
 		$AnimationPlayer.connect("animation_finished", Callable(self, "_on_animation_finished"))
+	
+	# Create and setup health bar
+	var health_bar_scene = load("res://scenes/enemy_health_bar.tscn")
+	if health_bar_scene:
+		health_bar = health_bar_scene.instantiate()
+		add_child(health_bar)
+		health_bar.update_health(current_health, max_health)
+	else:
+		print("Warning: Could not load health bar scene!")
 
 func _physics_process(delta: float) -> void:
 	if player == null:
@@ -105,6 +115,11 @@ func cast_powers() -> void:
 func take_damage() -> void:
 	current_health -= 1
 	print("Enemy took damage! Current health: ", current_health)
+	
+	# Update health bar
+	if health_bar:
+		health_bar.update_health(current_health, max_health)
+	
 	if current_health > 0:
 		$AnimationPlayer.play("take_hit")
 	if current_health <= 0:

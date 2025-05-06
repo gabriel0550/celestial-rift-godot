@@ -3,3 +3,4 @@ res://scenes/enemy.tscn
 res://scenes/GameOver2.tscn
 res://scripts/game_over.gd
 res://scripts/player.gd
+res://scripts/enemy.gd
