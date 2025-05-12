@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 
 	# Se sair do mapa, destrói o poder para evitar consumo de memória
 	# Substitua os valores abaixo pelo tamanho real do seu mapa, se necessário
-	var map_width = 2000
+	var map_width = 5000
 	var map_height = 600
 	if position.x > map_width or position.x < 0 or \
 	   position.y > map_height or position.y < 0:
