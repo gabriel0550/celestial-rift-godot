@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://cl2wsgmwpj0ur" path="res://scenes/GameOver.tscn" id="16_uc2ke"]
 [ext_resource type="Script" uid="uid://c7o2ntvmmou8e" path="res://scripts/game_over.gd" id="17_ivm7e"]
 [ext_resource type="Texture2D" uid="uid://bndcymrejoy5a" path="res://assets/game-over.png" id="18_1jfbe"]
-[ext_resource type="PackedScene" uid="uid://cetxp6tx5tysp" path="res://scenes/GameOver2.tscn" id="18_uc2ke"]
 [ext_resource type="PackedScene" uid="uid://c1jekgrsslwpk" path="res://scenes/enemy.tscn" id="19_ivm7e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_loaws"]
@@ -603,16 +602,16 @@ sources/10 = SubResource("TileSetAtlasSource_loaws")
 size = Vector2(419, 44.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emhbu"]
-size = Vector2(22, 11.3755)
+size = Vector2(22, 16.1877)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_472wx"]
 size = Vector2(15, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nyqu"]
-size = Vector2(153, 39.75)
+size = Vector2(153, 44.125)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qx8j2"]
-size = Vector2(328.5, 37)
+size = Vector2(328.5, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rsm41"]
 size = Vector2(178, 25)
@@ -627,10 +626,13 @@ size = Vector2(176.5, 33)
 size = Vector2(69.5, 25.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jfbe"]
-size = Vector2(754.75, 56)
+size = Vector2(782.375, 56)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_21mpt"]
 size = Vector2(757.5, 66.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgb0k"]
+size = Vector2(768, 76)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivm7e"]
 size = Vector2(60, 31.625)
@@ -652,7 +654,7 @@ size = Vector2(29.75, 20)
 size = Vector2(155.75, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1rp0p"]
-size = Vector2(134.5, 26)
+size = Vector2(134.5, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps466"]
 size = Vector2(765.5, 20)
@@ -689,7 +691,7 @@ position = Vector2(449, 230.688)
 shape = SubResource("RectangleShape2D_emhbu")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(543.125, 234.5)
+position = Vector2(543.125, 232.094)
 shape = SubResource("RectangleShape2D_emhbu")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
@@ -745,13 +747,13 @@ shape = SubResource("RectangleShape2D_472wx")
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(658, 250.25)
+position = Vector2(658, 248.063)
 shape = SubResource("RectangleShape2D_8nyqu")
 
 [node name="ultimo_node" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ultimo_node"]
-position = Vector2(952.75, 248.5)
+position = Vector2(952.75, 245.5)
 shape = SubResource("RectangleShape2D_qx8j2")
 
 [node name="chao_espinho" type="Area2D" parent="."]
@@ -804,17 +806,25 @@ shape = SubResource("RectangleShape2D_1jfbe")
 
 [node name="chao_sem_dano_4" type="StaticBody2D" parent="chao_espinho"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="chao_espinho/chao_sem_dano_4"]
-position = Vector2(3194, 276)
-shape = SubResource("RectangleShape2D_qieny")
-
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="chao_espinho/chao_sem_dano_4"]
 position = Vector2(3196, 301)
+shape = SubResource("RectangleShape2D_1jfbe")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="chao_espinho/chao_sem_dano_4"]
+position = Vector2(4716, 290)
 shape = SubResource("RectangleShape2D_1jfbe")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="chao_espinho"]
 position = Vector2(1498.25, 285.75)
 shape = SubResource("RectangleShape2D_21mpt")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="chao_espinho"]
+position = Vector2(3195, 285)
+shape = SubResource("RectangleShape2D_lgb0k")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="chao_espinho"]
+position = Vector2(4708, 281)
+shape = SubResource("RectangleShape2D_lgb0k")
 
 [node name="UI" type="CanvasLayer" parent="."]
 offset = Vector2(2, 0)
@@ -826,10 +836,10 @@ anchor_left = 0.352
 anchor_top = 0.192
 anchor_right = 0.478
 anchor_bottom = 0.271
-offset_left = -31.8
-offset_top = 996.2
-offset_right = 186.3
-offset_bottom = 1088.85
+offset_left = -41.8
+offset_top = 1012.2
+offset_right = 176.3
+offset_bottom = 1104.85
 
 [node name="HeartsContainer2" type="HBoxContainer" parent="UI/HeartsUI"]
 layout_mode = 1
@@ -903,18 +913,6 @@ shape = SubResource("RectangleShape2D_0wv4g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Coluna_flutuante_espinho3"]
 shape = SubResource("SegmentShape2D_ivm7e")
 
-[node name="GameOver2" parent="." instance=ExtResource("18_uc2ke")]
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-offset_left = 949.0
-offset_top = 490.0
-offset_right = 1180.0
-offset_bottom = 1138.0
-grow_horizontal = 1
-grow_vertical = 1
-
 [node name="enemy2" parent="." instance=ExtResource("19_ivm7e")]
 position = Vector2(4257, 224)
 
@@ -947,7 +945,7 @@ shape = SubResource("RectangleShape2D_lmqqd")
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
-position = Vector2(2919.75, 190)
+position = Vector2(2919.75, 188.5)
 shape = SubResource("RectangleShape2D_1rp0p")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D6"]
