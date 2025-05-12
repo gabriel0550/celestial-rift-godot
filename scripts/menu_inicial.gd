@@ -9,5 +9,5 @@ func _on_credits_bnt_pressed() -> void:
 	pass # Replace with function body.
 
 
-func _on_quit_btn_pressed() -> void:
+func _on_quit_btn_pressed():
 		get_tree().quit()

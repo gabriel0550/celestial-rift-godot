@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdnqwj2m0yyo"]
+
+[ext_resource type="FontFile" uid="uid://c5imtc2ksu2y5" path="res://Enchanted Land fonte.otf" id="1_c4rma"]
+[ext_resource type="Script" uid="uid://bc0bh7nhwwtpl" path="res://scripts/pause_menu.gd" id="1_ghj5q"]
+
+[sub_resource type="Theme" id="Theme_ghj5q"]
+default_base_scale = 0.78
+default_font = ExtResource("1_c4rma")
+default_font_size = 40
+Button/colors/font_focus_color = Color(0.827451, 0.72549, 0.376471, 1)
+Button/colors/font_hover_color = Color(0.827451, 0.72549, 0.376471, 1)
+Button/colors/font_hover_pressed_color = Color(1, 0.454902, 0.156863, 1)
+Button/colors/font_pressed_color = Color(1, 0.454902, 0.156863, 1)
+
+[sub_resource type="Theme" id="Theme_c4rma"]
+Button/colors/font_focus_color = Color(0.827451, 0.72549, 0.376471, 1)
+Button/colors/font_hover_color = Color(0.827451, 0.72549, 0.376471, 1)
+Button/colors/font_hover_pressed_color = Color(1, 0.454902, 0.156863, 1)
+Button/colors/font_pressed_color = Color(1, 0.454902, 0.156863, 1)
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_ghj5q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1150.0
+offset_bottom = 646.0
+color = Color(0, 0, 0, 0.682353)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 390.0
+offset_top = 151.0
+offset_right = 784.0
+offset_bottom = 199.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_c4rma")
+theme_override_font_sizes/font_size = 40
+text = "SELECIONE    UMA    OPÇÃO"
+horizontal_alignment = 1
+
+[node name="menu_holder" type="VBoxContainer" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -29.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator8" type="HSeparator" parent="menu_holder"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="resume_btn" type="Button" parent="menu_holder"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_ghj5q")
+theme_type_variation = &"FlatButton"
+text = "VOLTAR    AO   JOGO"
+
+[node name="HSeparator2" type="HSeparator" parent="menu_holder"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="HSeparator3" type="HSeparator" parent="menu_holder"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="HSeparator4" type="HSeparator" parent="menu_holder"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="quit_btn2" type="Button" parent="menu_holder"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_c4rma")
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("1_c4rma")
+theme_override_font_sizes/font_size = 40
+text = "SAIR     DO     JOGO"
+
+[connection signal="pressed" from="menu_holder/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="menu_holder/quit_btn2" to="." method="_on_quit_btn_2_pressed"]
