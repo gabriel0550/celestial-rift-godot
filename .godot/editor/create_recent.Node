@@ -1,12 +1,12 @@
+CollisionShape2D
+StaticBody2D
+Sprite2D
 TextureRect
 VBoxContainer
 Button
 Control
-CollisionShape2D
-StaticBody2D
 AnimationPlayer
 TileMap
-Sprite2D
 HBoxContainer
 Timer
 Area2D
