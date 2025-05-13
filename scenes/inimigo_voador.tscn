@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://m7n42sgpc0e0"]
+
+[ext_resource type="Texture2D" uid="uid://d15bp2ltaeve5" path="res://assets/Plague Flies.png" id="1_d71vk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kenht"]
+atlas = ExtResource("1_d71vk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hlfn"]
+atlas = ExtResource("1_d71vk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyac0"]
+atlas = ExtResource("1_d71vk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pc4mj"]
+atlas = ExtResource("1_d71vk")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3m3j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kenht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hlfn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyac0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pc4mj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="inimigo_voador" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w3m3j")

@@ -3,3 +3,5 @@ res://scenes/enemy.tscn
 res://scenes/GameOver2.tscn
 res://actors/player.tscn
 res://scenes/canvas_layer.tscn
+res://scenes/inimigo.tscn
+res://scenes/inimigo_voador.tscn
