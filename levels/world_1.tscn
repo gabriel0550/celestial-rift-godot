@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://b52lpv30byotv"]
+[gd_scene load_steps=47 format=3 uid="uid://b52lpv30byotv"]
 
 [ext_resource type="Texture2D" uid="uid://rw5ioyf8qfbp" path="res://assets/GandalfHardcore Hell Tiles 32x32.png" id="1_4nbp6"]
 [ext_resource type="Texture2D" uid="uid://0hjackm4icie" path="res://assets/GandalfHardcore Hell Tiles 32x32 chão.png" id="2_3fa71"]
@@ -17,7 +17,9 @@
 [ext_resource type="Script" uid="uid://c7o2ntvmmou8e" path="res://scripts/game_over.gd" id="17_ivm7e"]
 [ext_resource type="Texture2D" uid="uid://bndcymrejoy5a" path="res://assets/game-over.png" id="18_1jfbe"]
 [ext_resource type="PackedScene" uid="uid://cdnqwj2m0yyo" path="res://scenes/canvas_layer.tscn" id="18_uc2ke"]
+[ext_resource type="PackedScene" uid="uid://m7n42sgpc0e0" path="res://scenes/inimigo_voador.tscn" id="19_1jfbe"]
 [ext_resource type="PackedScene" uid="uid://c1jekgrsslwpk" path="res://scenes/enemy.tscn" id="19_ivm7e"]
+[ext_resource type="PackedScene" uid="uid://yyug7cgm3trk" path="res://scenes/inimigo.tscn" id="20_1jfbe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_loaws"]
 texture = ExtResource("1_4nbp6")
@@ -979,5 +981,38 @@ shape = SubResource("RectangleShape2D_ppsjm")
 
 [node name="pause_menu" parent="." instance=ExtResource("18_uc2ke")]
 visible = false
+
+[node name="inimigo_voador" parent="." instance=ExtResource("19_1jfbe")]
+position = Vector2(761, 117)
+
+[node name="inimigo_voador2" parent="." instance=ExtResource("19_1jfbe")]
+position = Vector2(1283, 65)
+
+[node name="inimigo_voador3" parent="." instance=ExtResource("19_1jfbe")]
+position = Vector2(1396, 16)
+
+[node name="inimigo" parent="inimigo_voador3" instance=ExtResource("20_1jfbe")]
+position = Vector2(252, 102)
+
+[node name="inimigo" parent="inimigo_voador3/inimigo" instance=ExtResource("20_1jfbe")]
+position = Vector2(-569, 82)
+
+[node name="inimigo2" parent="inimigo_voador3" instance=ExtResource("20_1jfbe")]
+position = Vector2(1378, 189)
+
+[node name="inimigo" parent="inimigo_voador3/inimigo2" instance=ExtResource("20_1jfbe")]
+position = Vector2(336, -121)
+
+[node name="inimigo_voador" parent="inimigo_voador3" instance=ExtResource("19_1jfbe")]
+position = Vector2(456, 72)
+
+[node name="inimigo_voador2" parent="inimigo_voador3" instance=ExtResource("19_1jfbe")]
+position = Vector2(1434, 34)
+
+[node name="inimigo_voador" parent="inimigo_voador3/inimigo_voador2" instance=ExtResource("19_1jfbe")]
+position = Vector2(360, -43)
+
+[node name="inimigo_voador2" parent="inimigo_voador3/inimigo_voador2" instance=ExtResource("19_1jfbe")]
+position = Vector2(733, 7)
 
 [connection signal="timeout" from="chao_espinho/DamageCooldown" to="chao_espinho" method="_on_damage_cooldown_timeout"]
