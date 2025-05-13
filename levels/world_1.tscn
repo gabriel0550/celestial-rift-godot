@@ -978,5 +978,6 @@ position = Vector2(4706, 107)
 shape = SubResource("RectangleShape2D_ppsjm")
 
 [node name="pause_menu" parent="." instance=ExtResource("18_uc2ke")]
+visible = false
 
 [connection signal="timeout" from="chao_espinho/DamageCooldown" to="chao_espinho" method="_on_damage_cooldown_timeout"]
