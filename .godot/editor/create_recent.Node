@@ -1,3 +1,7 @@
+Sprite2D
+StaticBody2D
+AnimatedSprite2D
+AudioStreamPlayer2D
 ColorRect
 Label
 HSeparator
@@ -5,11 +9,6 @@ Button
 VBoxContainer
 CanvasLayer
 CollisionShape2D
-StaticBody2D
-Sprite2D
 TextureRect
 Control
 AnimationPlayer
-TileMap
-HBoxContainer
-Timer
