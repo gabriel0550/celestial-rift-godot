@@ -1022,12 +1022,13 @@ position = Vector2(1283, 65)
 position = Vector2(1396, 16)
 
 [node name="inimigo" parent="inimigo_voador3" instance=ExtResource("20_1jfbe")]
-position = Vector2(268, 112)
+position = Vector2(74, 55)
 collision_layer = 1
 
 [node name="inimigo" parent="inimigo_voador3/inimigo" instance=ExtResource("20_1jfbe")]
-position = Vector2(-644, -29)
-collision_layer = 1
+position = Vector2(-651, 54)
+collision_layer = 2
+collision_mask = 1
 
 [node name="inimigo2" parent="inimigo_voador3" instance=ExtResource("20_1jfbe")]
 position = Vector2(1378, 189)

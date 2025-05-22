@@ -5,7 +5,6 @@ extends CharacterBody2D
 @export var change_direction_time = 1.5
 @export var max_distance = 300.0  # Maximum distance from starting position
 @export var vertical_range = 50.0  # How far up and down the enemy can fly
-@export var min_height = 50.0  # Minimum height above floor
 
 var timer = 0.0
 var direction = Vector2.ZERO
@@ -13,7 +12,6 @@ var start_position = Vector2.ZERO
 var current_position = Vector2.ZERO
 var vertical_offset = 0.0
 var vertical_direction = 1.0
-var floor_position = 100.0
 
 func _ready():
 	print("inimigo_voador _ready() called")
@@ -34,9 +32,6 @@ func _ready():
 	# Set initial random direction
 	change_direction()
 	print("Initial direction set: ", direction)
-	
-	# Get the floor position (assuming it's at y=0 or you can set it manually)
-	floor_position = 0.0
 
 func _physics_process(delta):
 	print("_physics_process called")
@@ -74,10 +69,6 @@ func _physics_process(delta):
 		randf_range(-10, 10),
 		randf_range(-10, 10)
 	)
-	
-	# Ensure we don't go below the floor
-	if global_position.y < floor_position + min_height:
-		velocity.y = abs(velocity.y)  # Force upward movement
 	
 	print("Calculated velocity: ", velocity)
 	move_and_slide()
