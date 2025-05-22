@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://nsnxbpagvnvb"]
+
+[ext_resource type="Script" uid="uid://bdr4ikptqmw7k" path="res://scripts/flying_slider.gd" id="2_3k4m5"]
+[ext_resource type="Texture2D" uid="uid://b5gcnbjit4yvb" path="res://assets/flying-slider.png" id="2_i0mqf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(70, 26)
+
+[node name="FlyingSlider" type="Node2D"]
+position = Vector2(43, -3)
+script = ExtResource("2_3k4m5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-12.5, 4.25)
+scale = Vector2(0.739583, 0.725806)
+texture = ExtResource("2_i0mqf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-14, 4)
+shape = SubResource("RectangleShape2D_1")
+
+[connection signal="ready" from="." to="." method="_ready"]

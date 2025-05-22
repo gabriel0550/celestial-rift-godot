@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://b52lpv30byotv"]
+[gd_scene load_steps=58 format=3 uid="uid://b52lpv30byotv"]
 
 [ext_resource type="Texture2D" uid="uid://rw5ioyf8qfbp" path="res://assets/GandalfHardcore Hell Tiles 32x32.png" id="1_4nbp6"]
 [ext_resource type="Texture2D" uid="uid://0hjackm4icie" path="res://assets/GandalfHardcore Hell Tiles 32x32 chão.png" id="2_3fa71"]
@@ -23,6 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://ctujp54gamuj5" path="res://backmusic.mp3" id="21_qx8j2"]
 [ext_resource type="Texture2D" uid="uid://c4tbwnvbmdqj5" path="res://assets/Fire sheet.png" id="22_qieny"]
 [ext_resource type="Texture2D" uid="uid://bro7oi0gkmfsw" path="res://assets/Large Statue.png" id="23_0wv4g"]
+[ext_resource type="PackedScene" path="res://scenes/flying_slider.tscn" id="24_wb1fk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_loaws"]
 texture = ExtResource("1_4nbp6")
@@ -1036,7 +1037,7 @@ shape = SubResource("RectangleShape2D_ppsjm")
 visible = false
 
 [node name="inimigo_voador" parent="." instance=ExtResource("19_1jfbe")]
-position = Vector2(761, 117)
+position = Vector2(279, 148)
 
 [node name="inimigo_voador2" parent="." instance=ExtResource("19_1jfbe")]
 position = Vector2(1283, 65)
@@ -1046,15 +1047,19 @@ position = Vector2(1396, 16)
 
 [node name="inimigo" parent="inimigo_voador3" instance=ExtResource("20_1jfbe")]
 position = Vector2(252, 102)
+collision_layer = 1
 
 [node name="inimigo" parent="inimigo_voador3/inimigo" instance=ExtResource("20_1jfbe")]
-position = Vector2(-569, 82)
+position = Vector2(-1296, 76)
+collision_layer = 1
 
 [node name="inimigo2" parent="inimigo_voador3" instance=ExtResource("20_1jfbe")]
 position = Vector2(1378, 189)
+collision_layer = 1
 
 [node name="inimigo" parent="inimigo_voador3/inimigo2" instance=ExtResource("20_1jfbe")]
 position = Vector2(336, -121)
+collision_layer = 1
 
 [node name="inimigo_voador" parent="inimigo_voador3" instance=ExtResource("19_1jfbe")]
 position = Vector2(456, 72)
@@ -1152,5 +1157,8 @@ stream = ExtResource("21_qx8j2")
 autoplay = true
 max_distance = 4096.0
 panning_strength = 3.0
+
+[node name="FlyingSlider" parent="." instance=ExtResource("24_wb1fk")]
+position = Vector2(1249, 179)
 
 [connection signal="timeout" from="chao_espinho/DamageCooldown" to="chao_espinho" method="_on_damage_cooldown_timeout"]

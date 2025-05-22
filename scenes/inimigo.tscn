@@ -1,10 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://yyug7cgm3trk"]
+[gd_scene load_steps=18 format=3 uid="uid://yyug7cgm3trk"]
 
 [ext_resource type="Script" uid="uid://f46p7uq3yx0f" path="res://inimigo.gd" id="1_61lki"]
 [ext_resource type="Texture2D" uid="uid://d1l3g14usklx8" path="res://assets/Male Damned.png" id="2_21tsg"]
+[ext_resource type="Texture2D" uid="uid://c71gek3qcuqxv" path="res://assets/male-damn-attack/attack0.png" id="2_jc2kt"]
+[ext_resource type="Texture2D" uid="uid://dniemisibcsus" path="res://assets/male-damn-attack/attack1.png" id="3_4v6kx"]
+[ext_resource type="Texture2D" uid="uid://b2d0h47j4aomq" path="res://assets/male-damn-attack/attack2.png" id="4_rmr57"]
+[ext_resource type="Texture2D" uid="uid://bfubm6vh4lyhh" path="res://assets/male-damn-attack/attack3.png" id="5_0dgd2"]
+[ext_resource type="Texture2D" uid="uid://dmhrmfdvj3cwm" path="res://assets/male-damn-attack/attack4.png" id="6_xc72h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4er16"]
-size = Vector2(13, 41)
+size = Vector2(22.5, 41)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ui621"]
 atlas = ExtResource("2_21tsg")
@@ -28,6 +33,26 @@ region = Rect2(256, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0dgd2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jc2kt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4v6kx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rmr57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0dgd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_xc72h")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ui621")
@@ -57,19 +82,32 @@ _data = {
 &"idle": SubResource("Animation_xc72h")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61lki"]
+size = Vector2(24, 63)
+
 [node name="inimigo" type="CharacterBody2D"]
+collision_layer = 3
 script = ExtResource("1_61lki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 7.5)
+position = Vector2(7, 6)
 shape = SubResource("RectangleShape2D_4er16")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
-position = Vector2(0.5, -12.5)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(7.5, -6.5)
 sprite_frames = SubResource("SpriteFrames_0dgd2")
-frame_progress = 0.501107
+animation = &"attack"
+frame_progress = 0.617303
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_n6ajk")
 }
+
+[node name="AttackArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(5, -1.5)
+shape = SubResource("RectangleShape2D_61lki")
