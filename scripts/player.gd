@@ -22,6 +22,11 @@ var animated_sprite: AnimatedSprite2D
 
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+# Attack variables
+var is_attacking: bool = false
+var attack_cooldown: float = 0.0
+const ATTACK_COOLDOWN_TIME: float = 0.5  # Time between attacks in seconds
+
 func _ready() -> void:
 	# Add the player to the "player" group
 	add_to_group("player")
@@ -56,6 +61,13 @@ func _physics_process(delta: float) -> void:
 		
 	if not is_on_floor():
 		velocity.y += gravity * delta
+
+	# Handle attack cooldown
+	if attack_cooldown > 0:
+		attack_cooldown -= delta
+
+	# Attack input
+	
 
 	# Pulo
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -187,3 +199,22 @@ func soltar_poder() -> void:
 func collect_power_stone():
 	has_power_stone = true
 	print("Pedra do poder coletada!")
+
+# New function to handle the attack
+func perform_attack() -> void:
+	if is_attacking:
+		return
+		
+	is_attacking = true
+	attack_cooldown = ATTACK_COOLDOWN_TIME
+	
+	if animated_sprite:
+		animated_sprite.play("attack_hand")
+		# Connect to the animation finished signal
+		animated_sprite.animation_finished.connect(_on_attack_animation_finished)
+
+func _on_attack_animation_finished() -> void:
+	is_attacking = false
+	if animated_sprite:
+		animated_sprite.play("idle")
+		animated_sprite.animation_finished.disconnect(_on_attack_animation_finished)

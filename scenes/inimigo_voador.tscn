@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://m7n42sgpc0e0"]
+[gd_scene load_steps=8 format=3 uid="uid://m7n42sgpc0e0"]
 
 [ext_resource type="Texture2D" uid="uid://d15bp2ltaeve5" path="res://assets/Plague Flies.png" id="1_d71vk"]
+[ext_resource type="Script" uid="uid://copnhxn1pom65" path="res://scripts/inimigo_voador.gd" id="1_kenht"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kenht"]
 atlas = ExtResource("1_d71vk")
@@ -39,6 +40,7 @@ animations = [{
 }]
 
 [node name="inimigo_voador" type="CharacterBody2D"]
+script = ExtResource("1_kenht")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 

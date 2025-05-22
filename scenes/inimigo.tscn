@@ -87,6 +87,7 @@ size = Vector2(24, 63)
 
 [node name="inimigo" type="CharacterBody2D"]
 collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_61lki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -105,8 +106,7 @@ libraries = {
 }
 
 [node name="AttackArea" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 2
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
 position = Vector2(5, -1.5)

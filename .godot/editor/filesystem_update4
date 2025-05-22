@@ -1,3 +1,6 @@
 res://levels/world_1.tscn
 res://scenes/inimigo.tscn
 res://inimigo.gd
+res://scripts/player.gd
+res://scenes/inimigo_voador.tscn
+res://scripts/inimigo_voador.gd

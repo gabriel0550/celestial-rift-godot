@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 const SPEED = 50.0
-const ATTACK_RANGE = 50.0
 const FOLLOW_RANGE = 200.0
 const WALK_DISTANCE = 20.0
 const ATTACK_COOLDOWN = 2.0
+const DAMAGE_COOLDOWN = 1.0  # Time between damage applications
 
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var animation_player = $Animation
@@ -13,6 +13,7 @@ const ATTACK_COOLDOWN = 2.0
 var player: Node2D
 var is_attacking = false
 var attack_timer = 0.0
+var damage_timer = 0.0  # Timer for damage cooldown
 var walk_direction = 1
 var walk_distance = 0.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -50,6 +51,10 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	
+	# Update damage cooldown
+	if damage_timer > 0:
+		damage_timer -= delta
+	
 	# Calculate distance to player
 	var distance_to_player = position.distance_to(player.position)
 	
@@ -72,6 +77,7 @@ func _physics_process(delta):
 			# Follow player
 			var direction = (player.position - position).normalized()
 			velocity.x = direction.x * SPEED
+			
 			# Flip sprite based on movement direction
 			animated_sprite.flip_h = velocity.x < 0
 		else:
@@ -94,24 +100,31 @@ func _physics_process(delta):
 		if not is_attacking and animated_sprite.animation != "default" and not animated_sprite.is_playing():
 			animated_sprite.play("default")
 
+func _attack():
+	is_attacking = true
+	attack_timer = ATTACK_COOLDOWN
+	can_attack = false
+	# Stop movement when attacking
+	velocity.x = 0
+	velocity.y = 0
+	# Store current Y position
+	initial_y_position = position.y
+	# Play attack animation
+	animated_sprite.play("attack")
+
 func _on_attack_area_body_entered(body):
-	if body.is_in_group("player") and can_attack:
-		is_attacking = true
-		attack_timer = ATTACK_COOLDOWN
-		can_attack = false
-		# Stop movement when attacking
-		velocity.x = 0
-		velocity.y = 0
-		# Store current Y position
-		initial_y_position = position.y
-		# Deal damage to player
-		if body.has_method("take_damage"):
-			body.take_damage()
-		# Play attack animation
-		animated_sprite.play("attack")
+	print("Body entered attack area: ", body.name)  # Debug print
+	if body == player and damage_timer <= 0:
+		print("Player entered attack area")  # Debug print
+		if player.has_method("take_damage"):
+			print("Dealing damage to player")  # Debug print
+			player.take_damage()
+			damage_timer = DAMAGE_COOLDOWN
+			_attack()
 
 func _on_attack_area_body_exited(body):
-	if body.is_in_group("player"):
+	if body == player:
+		print("Player exited attack area")  # Debug print
 		# Reset attack state when player leaves the area
 		is_attacking = false
 		can_attack = true
