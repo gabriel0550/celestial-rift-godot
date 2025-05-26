@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://nsnxbpagvnvb"]
 
-[ext_resource type="Script" uid="uid://bdr4ikptqmw7k" path="res://scripts/flying_slider.gd" id="2_3k4m5"]
-[ext_resource type="Texture2D" uid="uid://b5gcnbjit4yvb" path="res://assets/flying-slider.png" id="2_i0mqf"]
+[ext_resource type="Script" uid="uid://dpx5e6dt2iik7" path="res://scripts/flying_slider.gd" id="2_3k4m5"]
+[ext_resource type="Texture2D" uid="uid://cwqnublyc1aho" path="res://assets/flying-slider.png" id="2_i0mqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(70, 26)
+size = Vector2(108.5, 26)
 
 [node name="FlyingSlider" type="Node2D"]
 position = Vector2(43, -3)
