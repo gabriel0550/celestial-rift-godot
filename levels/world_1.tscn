@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://b52lpv30byotv"]
+[gd_scene load_steps=58 format=3 uid="uid://b52lpv30byotv"]
 
 [ext_resource type="Texture2D" uid="uid://rw5ioyf8qfbp" path="res://assets/GandalfHardcore Hell Tiles 32x32.png" id="1_4nbp6"]
 [ext_resource type="Texture2D" uid="uid://0hjackm4icie" path="res://assets/GandalfHardcore Hell Tiles 32x32 chão.png" id="2_3fa71"]
@@ -23,7 +23,8 @@
 [ext_resource type="AudioStream" uid="uid://ctujp54gamuj5" path="res://backmusic.mp3" id="21_qx8j2"]
 [ext_resource type="Texture2D" uid="uid://c4tbwnvbmdqj5" path="res://assets/Fire sheet.png" id="22_qieny"]
 [ext_resource type="Texture2D" uid="uid://bro7oi0gkmfsw" path="res://assets/Large Statue.png" id="23_0wv4g"]
-[ext_resource type="PackedScene" path="res://scenes/flying_slider.tscn" id="24_wb1fk"]
+[ext_resource type="PackedScene" uid="uid://nsnxbpagvnvb" path="res://scenes/flying_slider.tscn" id="24_wb1fk"]
+[ext_resource type="Script" uid="uid://xh7dt2onqd1y" path="res://scripts/fire_portal.gd" id="25_uhqol"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_loaws"]
 texture = ExtResource("1_4nbp6")
@@ -713,11 +714,15 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3c13m"]
+size = Vector2(99.625, 113)
+
 [node name="world-1" type="Node2D"]
 position = Vector2(3, 375)
 
 [node name="level" type="TileMap" parent="."]
 texture_filter = 1
+position = Vector2(1, 0)
 tile_set = SubResource("TileSet_a0an7")
 format = 2
 layer_0/name = "chão"
@@ -1140,5 +1145,12 @@ position = Vector2(1685, 167)
 
 [node name="FlyingSlider2" parent="." instance=ExtResource("24_wb1fk")]
 position = Vector2(1281, 183)
+
+[node name="FirePortal" type="Area2D" parent="."]
+script = ExtResource("25_uhqol")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirePortal"]
+position = Vector2(4719.19, 5.5)
+shape = SubResource("RectangleShape2D_3c13m")
 
 [connection signal="timeout" from="chao_espinho/DamageCooldown" to="chao_espinho" method="_on_damage_cooldown_timeout"]

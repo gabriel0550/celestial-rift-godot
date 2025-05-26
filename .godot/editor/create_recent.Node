@@ -1,4 +1,10 @@
 Sprite2D
+ParallaxLayer
+ParallaxBackground
+Parallax2D
+TileMap
+CollisionShape2D
+Area2D
 StaticBody2D
 AnimatedSprite2D
 AudioStreamPlayer2D
@@ -6,9 +12,3 @@ ColorRect
 Label
 HSeparator
 Button
-VBoxContainer
-CanvasLayer
-CollisionShape2D
-TextureRect
-Control
-AnimationPlayer
