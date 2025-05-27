@@ -4,22 +4,22 @@
 [ext_resource type="Texture2D" uid="uid://cwqnublyc1aho" path="res://assets/flying-slider.png" id="2_i0mqf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(108.5, 26)
+size = Vector2(102.25, 26)
 
 [node name="FlyingSlider" type="Node2D"]
 position = Vector2(43, -3)
 script = ExtResource("2_3k4m5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-12.5, 4.25)
-scale = Vector2(0.739583, 0.725806)
+position = Vector2(-16.5, 4.25)
+scale = Vector2(1.07292, 0.725806)
 texture = ExtResource("2_i0mqf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(1, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-14, 4)
+position = Vector2(-17.125, 4)
 shape = SubResource("RectangleShape2D_1")
 
 [connection signal="ready" from="." to="." method="_ready"]

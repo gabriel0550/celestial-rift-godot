@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfrog305y5yf6"]
+
+[ext_resource type="Texture2D" uid="uid://m6o7yjji7fpk" path="res://assets/GandalfHardcore Warrior.png" id="1_0tc64"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dhcow"]
+radius = 11.0
+height = 48.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tc64"]
+atlas = ExtResource("1_0tc64")
+region = Rect2(400, 448, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhcow"]
+atlas = ExtResource("1_0tc64")
+region = Rect2(480, 448, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fljvu"]
+atlas = ExtResource("1_0tc64")
+region = Rect2(560, 448, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_siyci"]
+atlas = ExtResource("1_0tc64")
+region = Rect2(640, 448, 80, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juyix"]
+atlas = ExtResource("1_0tc64")
+region = Rect2(720, 448, 80, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2wlfj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tc64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhcow")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fljvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_siyci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_juyix")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Brother" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 31)
+shape = SubResource("CapsuleShape2D_dhcow")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 21)
+sprite_frames = SubResource("SpriteFrames_2wlfj")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.368574

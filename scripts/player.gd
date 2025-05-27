@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
-const JUMP_VELOCITY = -350.0
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
 @export var poder_scene: PackedScene  # Cena do poder exportável
 var has_power_stone = false
 
@@ -51,35 +51,40 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
-		velocity = Vector2.ZERO  # Stop all movement when dead
+		velocity = Vector2.ZERO
 		return
-		
+
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	# Pulo
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		
 	# Movimento lateral
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction != 0:
 		velocity.x = direction * SPEED
-		# Flip the character instantly based on movement direction
-		if direction < 0 and facing_right:
-			scale.x = -1
-			facing_right = false
-		elif direction > 0 and not facing_right:
-			scale.x = 1
-			facing_right = true
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED * 6 * delta)  
+		velocity.x = move_toward(velocity.x, 0, SPEED * 6 * delta)
+
+	# Pulo
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
 
 	# Disparo de poder
 	if Input.is_action_just_pressed("ui_attack"):
 		print("Tecla pressionada!")
 		soltar_poder()
-   
+		if animated_sprite:
+			animated_sprite.play("attack")
+
+	# Animações
+	if animated_sprite:
+		if not is_on_floor():
+			animated_sprite.play("jump")
+		elif direction != 0:
+			animated_sprite.play("run")
+			animated_sprite.scale.x = direction
+		else:
+			animated_sprite.play("idle")
+
 	move_and_slide()
 	
 	# Update flash effect
