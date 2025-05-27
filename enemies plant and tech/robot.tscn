@@ -1,0 +1,67 @@
+[gd_scene load_steps=10 format=3 uid="uid://dag1jliosx12c"]
+
+[ext_resource type="Texture2D" uid="uid://fnbl1rnsxyb6" path="res://enemies plant and tech/Anim_Robot_Walk1_v1.1_spritesheet.png" id="1_qcowk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_coqtl"]
+size = Vector2(23, 27)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijfy4"]
+atlas = ExtResource("1_qcowk")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qt6ra"]
+atlas = ExtResource("1_qcowk")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymoxo"]
+atlas = ExtResource("1_qcowk")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8g7g"]
+atlas = ExtResource("1_qcowk")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tdgv"]
+atlas = ExtResource("1_qcowk")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d41sy"]
+atlas = ExtResource("1_qcowk")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xh7ko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijfy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qt6ra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymoxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8g7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tdgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d41sy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 3.5)
+shape = SubResource("RectangleShape2D_coqtl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xh7ko")
+autoplay = "default"
+frame_progress = 0.0908503
