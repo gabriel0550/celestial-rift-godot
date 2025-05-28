@@ -14,8 +14,6 @@ var player: Node2D = null
 
 func _ready():
 	start_position = global_position
-
-	# Conectar sinais da área de visão
 	$VisionArea.body_entered.connect(_on_body_entered)
 	$VisionArea.body_exited.connect(_on_body_exited)
 
@@ -33,12 +31,10 @@ func patrulhar(delta):
 	velocity.x = speed * direction
 	move_and_slide()
 
-	# Inverte direção ao bater na parede ou alcançar limite
 	if abs(global_position.x - start_position.x) >= patrol_distance or is_on_wall():
 		pausar_patrulha()
 		direction *= -1
 
-	# Atualiza animação
 	atualizar_animacao()
 
 func pausar_patrulha():
@@ -50,8 +46,12 @@ func pausar_patrulha():
 
 func perseguir_jogador(delta):
 	var to_player = player.global_position - global_position
-	direction = sign(to_player.x)
-	velocity.x = speed * direction
+	if to_player.length() > 10:
+		direction = sign(to_player.x)
+		velocity.x = speed * direction
+	else:
+		velocity.x = 0
+
 	velocity.y += ProjectSettings.get_setting("physics/2d/default_gravity") * delta
 	move_and_slide()
 
@@ -60,8 +60,11 @@ func perseguir_jogador(delta):
 func atualizar_animacao():
 	if has_node("AnimatedSprite2D"):
 		$AnimatedSprite2D.flip_h = direction < 0
-		if not $AnimatedSprite2D.is_playing():
-			$AnimatedSprite2D.play("walk")
+		if velocity.x == 0:
+			$AnimatedSprite2D.play("idle")
+		else:
+			if not $AnimatedSprite2D.is_playing():
+				$AnimatedSprite2D.play("walk")
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):

@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ij6vw"]
 radius = 13.0
-height = 36.0
+height = 48.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_humxy"]
 atlas = ExtResource("2_icxdm")
@@ -100,7 +100,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_is2mn")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -140,13 +140,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uswtc"]
-size = Vector2(188, 20)
+size = Vector2(117.5, 20)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yf7vs"]
-radius = 17.0
-height = 54.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_icxdm"]
+size = Vector2(59, 43)
 
-[node name="Mushroom" type="CharacterBody2D"]
+[node name="Mushroom" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_pwx8x")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -155,17 +154,17 @@ shape = SubResource("CapsuleShape2D_ij6vw")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_4sjlk")
-animation = &"idle"
+animation = &"death"
 autoplay = "idle"
-frame_progress = 0.353327
 
 [node name="VisionArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
-position = Vector2(84, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea" groups=["enemy"]]
+position = Vector2(59.25, 3)
 shape = SubResource("RectangleShape2D_uswtc")
 
 [node name="Hurtbox" type="Area2D" parent="." groups=["enemy"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
-shape = SubResource("CapsuleShape2D_yf7vs")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" groups=["enemy"]]
+position = Vector2(1.5, 2.5)
+shape = SubResource("RectangleShape2D_icxdm")

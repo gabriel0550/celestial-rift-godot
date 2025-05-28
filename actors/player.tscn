@@ -211,7 +211,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvpqy"]
-size = Vector2(23.5, 6)
+size = Vector2(51.625, 6)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
@@ -240,6 +240,6 @@ frame_progress = 0.278844
 
 [node name="AttackArea" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
-position = Vector2(11.25, -17)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" groups=["player"]]
+position = Vector2(25.6875, -12)
 shape = SubResource("RectangleShape2D_mvpqy")

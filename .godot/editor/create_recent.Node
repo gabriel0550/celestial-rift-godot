@@ -1,3 +1,5 @@
+HBoxContainer
+Container
 CollisionShape2D
 Area2D
 RayCast2D
@@ -11,4 +13,3 @@ Parallax2D
 TileMap
 StaticBody2D
 AudioStreamPlayer2D
-ColorRect

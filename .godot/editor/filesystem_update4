@@ -1,15 +1,12 @@
-res://levels/world_2.tscn
-res://enemies plant and tech/RobotScript.gd
 res://levels/world_1.tscn
 res://actors/player.tscn
 res://scenes/inimigo.tscn
 res://scenes/inimigo_voador.tscn
+res://levels/world_2.tscn
 res://levels/world_3.tscn
 res://scenes/hearts_ui.tscn
 res://scenes/flying_slider.tscn
 res://scenes/enemy.tscn
-res://enemies plant and tech/robot.tscn
-res://enemies plant and tech/Robot.gd
-res://scripts/player.gd
 res://enemies plant and tech/Mushroom.tscn
 res://enemies plant and tech/mushroom.gd
+res://scripts/player.gd
