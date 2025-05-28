@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cand8bnvmxf4w"]
+[gd_scene load_steps=31 format=3 uid="uid://cand8bnvmxf4w"]
 
 [ext_resource type="Script" uid="uid://3ufiwxyboiji" path="res://scripts/player.gd" id="1_lsxre"]
 [ext_resource type="Texture2D" uid="uid://digwl6baltf3g" path="res://hero/adventurer-Sheet.png" id="2_mvpqy"]
@@ -91,6 +91,22 @@ region = Rect2(250, 37, 50, 37)
 atlas = ExtResource("2_mvpqy")
 region = Rect2(300, 37, 50, 37)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gruaa"]
+atlas = ExtResource("2_mvpqy")
+region = Rect2(50, 222, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsnin"]
+atlas = ExtResource("2_mvpqy")
+region = Rect2(200, 222, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsr4s"]
+atlas = ExtResource("2_mvpqy")
+region = Rect2(300, 259, 50, 37)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcrwa"]
+atlas = ExtResource("2_mvpqy")
+region = Rect2(0, 296, 50, 37)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_tue77"]
 animations = [{
 "frames": [{
@@ -116,7 +132,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_41w2c")
 }],
 "loop": true,
-"name": &"atack",
+"name": &"attack",
 "speed": 5.0
 }, {
 "frames": [{
@@ -175,7 +191,27 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gruaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsnin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsr4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcrwa")
+}],
+"loop": true,
+"name": &"sword_attack",
+"speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvpqy"]
+size = Vector2(23.5, 6)
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
 texture_filter = 1
@@ -198,6 +234,12 @@ editor_draw_limits = true
 position = Vector2(0.5, -20)
 scale = Vector2(1, 1.075)
 sprite_frames = SubResource("SpriteFrames_tue77")
-animation = &"idle"
+animation = &"sword_attack"
 autoplay = "idle"
-frame_progress = 0.737334
+frame_progress = 0.278844
+
+[node name="AttackArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea"]
+position = Vector2(11.25, -17)
+shape = SubResource("RectangleShape2D_mvpqy")

@@ -1878,13 +1878,10 @@ position = Vector2(4487, 671)
 scale = Vector2(-1.8, 1.8)
 
 [node name="Mushroom" parent="." instance=ExtResource("11_1x7ll")]
-position = Vector2(1450, 750)
-scale = Vector2(-1, 1)
+position = Vector2(1446, 743)
 
 [node name="Mushroom2" parent="." instance=ExtResource("11_1x7ll")]
-position = Vector2(713, 749)
-scale = Vector2(-1, 1)
+position = Vector2(730, 744)
 
 [node name="Mushroom3" parent="." instance=ExtResource("11_1x7ll")]
-position = Vector2(2380, 751)
-scale = Vector2(-1, 1)
+position = Vector2(2309, 743)
