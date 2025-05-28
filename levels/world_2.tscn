@@ -3396,17 +3396,17 @@ position = Vector2(12673.5, 582.75)
 shape = SubResource("RectangleShape2D_3kj5o")
 
 [node name="Robot1" parent="." instance=ExtResource("14_j8rw8")]
-position = Vector2(5803, 716)
-scale = Vector2(-1.5, 1.5)
+position = Vector2(4069, 721)
+scale = Vector2(1.5, 1.5)
 
 [node name="Robot2" parent="." instance=ExtResource("14_j8rw8")]
-position = Vector2(4548, 721)
-scale = Vector2(-1.5, 1.5)
+position = Vector2(5540, 718)
+scale = Vector2(1.5, 1.5)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("14_j8rw8")]
+[node name="Robot3" parent="." instance=ExtResource("14_j8rw8")]
 position = Vector2(8840, 718)
-scale = Vector2(-1.5, 1.5)
+scale = Vector2(1.5, 1.5)
 
-[node name="CharacterBody2D2" parent="." instance=ExtResource("14_j8rw8")]
+[node name="Robot4" parent="." instance=ExtResource("14_j8rw8")]
 position = Vector2(10163, 720)
-scale = Vector2(-1.5, 1.5)
+scale = Vector2(1.5, 1.5)

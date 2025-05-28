@@ -4,10 +4,9 @@ res://scenes/inimigo.tscn
 res://scenes/inimigo_voador.tscn
 res://levels/world_2.tscn
 res://levels/world_3.tscn
-res://scripts/player.gd
 res://scenes/hearts_ui.tscn
 res://scenes/flying_slider.tscn
 res://scenes/enemy.tscn
-res://brother/brother.tscn
-res://character_body_2d.tscn
 res://enemies plant and tech/Mushroom.tscn
+res://enemies plant and tech/mushroom.gd
+res://scripts/player.gd

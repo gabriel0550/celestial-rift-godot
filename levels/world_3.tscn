@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://m5pnusdky7pa"]
+[gd_scene load_steps=18 format=3 uid="uid://m5pnusdky7pa"]
 
 [ext_resource type="Texture2D" uid="uid://dqppakq3qj53w" path="res://AssetsNature/Terrain_and_Props.png" id="1_560lt"]
 [ext_resource type="PackedScene" uid="uid://cand8bnvmxf4w" path="res://actors/player.tscn" id="2_obgy7"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dxmxwhvt3xtau" path="res://AssetsNature/BG/BG_1_loop_alt_2.png" id="9_v6bey"]
 [ext_resource type="PackedScene" uid="uid://bfrog305y5yf6" path="res://brother/brother.tscn" id="10_3o8ha"]
 [ext_resource type="PackedScene" uid="uid://crd1fach11b1l" path="res://enemies plant and tech/Mushroom.tscn" id="11_1x7ll"]
+[ext_resource type="PackedScene" uid="uid://b6x8g0v0j5o1y" path="res://scenes/hearts_ui.tscn" id="12_qsuas"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obgy7"]
 texture = ExtResource("1_560lt")
@@ -1878,13 +1879,21 @@ position = Vector2(4487, 671)
 scale = Vector2(-1.8, 1.8)
 
 [node name="Mushroom" parent="." instance=ExtResource("11_1x7ll")]
-position = Vector2(1450, 750)
-scale = Vector2(-1, 1)
+position = Vector2(1446, 743)
 
 [node name="Mushroom2" parent="." instance=ExtResource("11_1x7ll")]
-position = Vector2(713, 749)
-scale = Vector2(-1, 1)
+position = Vector2(730, 744)
 
 [node name="Mushroom3" parent="." instance=ExtResource("11_1x7ll")]
-position = Vector2(2380, 751)
-scale = Vector2(-1, 1)
+position = Vector2(2309, 743)
+
+[node name="HeartsUI" parent="." instance=ExtResource("12_qsuas")]
+anchors_preset = 0
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = 823.0
+offset_top = 254.0
+offset_right = 1023.0
+offset_bottom = 294.0
+grow_horizontal = 1
+metadata/_edit_use_anchors_ = true

@@ -860,10 +860,10 @@ anchor_left = 0.352
 anchor_top = 0.192
 anchor_right = 0.478
 anchor_bottom = 0.271
-offset_left = 531.552
-offset_top = -25.592
-offset_right = 749.652
-offset_bottom = 67.0578
+offset_left = 313.552
+offset_top = 111.408
+offset_right = 531.652
+offset_bottom = 204.058
 
 [node name="HeartsContainer2" type="HBoxContainer" parent="UI/HeartsUI"]
 layout_mode = 1
@@ -912,7 +912,7 @@ offset_bottom = -28.0
 text = "Restart"
 
 [node name="enemy" parent="." instance=ExtResource("19_ivm7e")]
-position = Vector2(3680, 229)
+position = Vector2(3680, 254)
 
 [node name="enemy2" parent="." instance=ExtResource("19_ivm7e")]
 position = Vector2(6438, 227)
@@ -930,11 +930,11 @@ position = Vector2(1283, 65)
 position = Vector2(1396, 16)
 
 [node name="inimigo" parent="inimigo_voador3" instance=ExtResource("20_1jfbe")]
-position = Vector2(710, -134.667)
+position = Vector2(168.667, 138.667)
 collision_layer = 1
 
 [node name="inimigo" parent="inimigo_voador3/inimigo" instance=ExtResource("20_1jfbe")]
-position = Vector2(192.667, -11.3333)
+position = Vector2(821.333, -4.66667)
 collision_layer = 2
 collision_mask = 1
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dag1jliosx12c"]
+[gd_scene load_steps=11 format=3 uid="uid://dag1jliosx12c"]
 
+[ext_resource type="Script" uid="uid://iibe23k50lqf" path="res://enemies plant and tech/Robot.gd" id="1_coqtl"]
 [ext_resource type="Texture2D" uid="uid://fnbl1rnsxyb6" path="res://enemies plant and tech/Anim_Robot_Walk1_v1.1_spritesheet.png" id="1_qcowk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_coqtl"]
-size = Vector2(23, 27)
+size = Vector2(21, 26)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ijfy4"]
 atlas = ExtResource("1_qcowk")
@@ -56,9 +57,11 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+platform_wall_layers = 3
+script = ExtResource("1_coqtl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 3.5)
+position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_coqtl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

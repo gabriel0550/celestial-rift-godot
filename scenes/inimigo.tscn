@@ -98,7 +98,6 @@ shape = SubResource("RectangleShape2D_4er16")
 position = Vector2(7.5, -6.5)
 sprite_frames = SubResource("SpriteFrames_0dgd2")
 animation = &"attack"
-frame_progress = 0.617303
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
