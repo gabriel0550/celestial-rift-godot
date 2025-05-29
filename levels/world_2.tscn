@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://b6gbflpp5qhrc"]
+[gd_scene load_steps=32 format=3 uid="uid://b6gbflpp5qhrc"]
 
 [ext_resource type="Texture2D" uid="uid://bgrm6bmx8v7l0" path="res://AssetsTech/tiles/1_Industrial_Tileset_1.png" id="1_kkr62"]
 [ext_resource type="Texture2D" uid="uid://dt4f5j8844ig2" path="res://AssetsTech/tiles/1_Industrial_Tileset_2.png" id="2_3kj5o"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://b6x8g0v0j5o1y" path="res://scenes/hearts_ui.tscn" id="15_0y10r"]
 [ext_resource type="PackedScene" uid="uid://cl2wsgmwpj0ur" path="res://scenes/GameOver.tscn" id="16_gameover"]
 [ext_resource type="PackedScene" uid="uid://yyug7cgm3trk" path="res://scenes/inimigo.tscn" id="17_3jmqf"]
+[ext_resource type="PackedScene" path="res://scenes/init_game_over.tscn" id="18_cv7df"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3kj5o"]
 texture = ExtResource("1_kkr62")
@@ -3423,9 +3424,13 @@ offset_right = -223.0
 offset_bottom = 135.0
 
 [node name="GameOver" parent="UI" instance=ExtResource("16_gameover")]
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -1079.0
+offset_top = -806.0
+offset_right = 1511.0
+offset_bottom = 1443.0
 script = null
 
+[node name="InitGameOver" parent="." instance=ExtResource("18_cv7df")]
+
 [node name="inimigo" parent="." instance=ExtResource("17_3jmqf")]
-position = Vector2(397, 712)
+position = Vector2(838, 651)

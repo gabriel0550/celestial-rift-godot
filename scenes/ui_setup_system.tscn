@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://d5dws878yirt"]
+
+[ext_resource type="PackedScene" uid="uid://cl2wsgmwpj0ur" path="res://scenes/GameOver.tscn" id="1_s1a0w"]
+[ext_resource type="Script" path="res://scripts/ui_setup.gd" id="2_hgk0w"]
+
+[node name="UISetup" type="Node"]
+script = ExtResource("2_hgk0w")
+
+[node name="GameOver" parent="." instance=ExtResource("1_s1a0w")]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -24,3 +24,13 @@ res://scripts/tech_portal.gd
 res://scripts/thorn.gd
 res://scenes/GameOver.tscn
 res://scenes/canvas_layer.tscn
+res://scripts/game_manager.gd
+res://scripts/game_over.gd
+res://scripts/ui_setup.gd
+res://scripts/world_2_game_over_fix.gd
+res://scripts/game_over_initializer.gd
+res://scripts/init_game_over.gd
+res://scripts/world_2_game_over.gd
+res://scenes/init_game_over.tscn
+res://scripts/game_over_debug.gd
+res://scripts/game_over_manager.gd

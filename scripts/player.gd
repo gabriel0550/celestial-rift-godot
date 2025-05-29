@@ -60,11 +60,21 @@ func _ready() -> void:
 		print("HeartsUI found successfully")
 
 	# Try to find GameOver screen in different world configurations
-	game_over_screen = get_node("/root/world-1/UI/GameOver")  # World 1 path
+	print("Looking for Game Over screen in different worlds...")
+	
+	game_over_screen = get_node_or_null("/root/world-1/UI/GameOver")  # World 1 path
+	if game_over_screen != null:
+		print("Found GameOver in world-1")
+	
 	if game_over_screen == null:
-		game_over_screen = get_node("/root/world_2/UI/GameOver")  # World 2 path
+		game_over_screen = get_node_or_null("/root/world_2/UI/GameOver")  # World 2 path
+		if game_over_screen != null:
+			print("Found GameOver in world_2")
+	
 	if game_over_screen == null:
-		game_over_screen = get_node("/root/world_3/UI/GameOver")  # World 3 path
+		game_over_screen = get_node_or_null("/root/world_3/UI/GameOver")  # World 3 path
+		if game_over_screen != null:
+			print("Found GameOver in world_3")
 	
 	if game_over_screen == null:
 		print("Warning: Game Over screen not found in any world!")
@@ -178,51 +188,119 @@ func heal() -> void:
 
 func die() -> void:
 	is_dead = true
-	print("Player died!")
+	print("Player died! Current scene: " + get_tree().current_scene.name)
 	velocity = Vector2.ZERO
-
-	# Use the GameManager to show the game over screen
-	if get_node_or_null("/root/GameManager") != null:
+	
+	# WORLD 2 SPECIFIC FIX - Direct approach for world_2
+	var current_scene = get_tree().current_scene
+	if current_scene.name == "world_2":
+		print("World 2 detected, using direct approach")
+		
+		if current_scene.has_node("UI/GameOver"):
+			var world2_game_over = current_scene.get_node("UI/GameOver")
+			world2_game_over.visible = true
+			
+			# Force show_game_over call
+			if world2_game_over.has_method("show_game_over"):
+				world2_game_over.call("show_game_over")
+				print("Called show_game_over on world_2 GameOver")
+			
+			# Ensure particles work
+			world2_game_over.process_mode = Node.PROCESS_MODE_ALWAYS
+			
+			return
+	
+	# GENERAL APPROACH - Try direct reference first
+	if current_scene.has_node("UI/GameOver"):
+		var direct_game_over = current_scene.get_node("UI/GameOver")
+		print("Found GameOver directly in current world UI")
+		
+		direct_game_over.visible = true
+		if direct_game_over.has_method("show_game_over"):
+			direct_game_over.show_game_over()
+			print("Showing GameOver using direct reference")
+			return
+	
+	# Try autoloads
+	if get_node_or_null("/root/GameOverManager") != null:
+		get_node("/root/GameOverManager").show_game_over()
+		print("Using GameOverManager for game over")
+		return
+		
+	elif get_node_or_null("/root/GameManager") != null:
 		get_node("/root/GameManager").show_game_over()
 		print("Using GameManager for game over")
-	else:
-		print("GameManager not found, trying fallback methods")
+		return
+	
+	# Fallback methods
+	print("Game managers not found, trying fallback methods")
+	
+	# Try to find existing GameOver screen in the world
+	var game_over_ui = find_game_over_ui()
+	
+	# If we found a GameOver UI in the scene, use it
+	if game_over_ui:
+		game_over_screen = game_over_ui
+		print("Using existing GameOver UI found by find_game_over_ui()")
 		
-		# Find or create the Game Over UI as fallback
+		game_over_screen.visible = true
+		if game_over_screen.has_method("show_game_over"):
+			game_over_screen.show_game_over()
+		else:
+			print("Error: Game Over screen doesn't have show_game_over method!")
+	else:
+		# Final fallback - create a new Game Over UI
 		var ui_layer = find_ui_layer()
-		if ui_layer and not ui_layer.has_node("GameOver"):
+		if ui_layer:
 			var game_over_scene = load("res://scenes/GameOver.tscn")
 			if game_over_scene:
 				var game_over_instance = game_over_scene.instantiate()
 				ui_layer.add_child(game_over_instance)
 				game_over_screen = game_over_instance
-				print("GameOver UI added dynamically as fallback")
+				print("GameOver UI created as last resort")
+				game_over_screen.visible = true
 				
-		if game_over_screen != null:
-			if game_over_screen.has_method("show_game_over"):
-				game_over_screen.show_game_over()
-			else:
-				print("Error: Game Over screen doesn't have show_game_over method!")
+				if game_over_screen.has_method("show_game_over"):
+					game_over_screen.show_game_over()
 		else:
-			print("Error: Game Over screen not found or created!")
+			print("Error: Couldn't find or create UI layer for GameOver!")
 
 func find_ui_layer() -> Node:
 	# Try to find UI in the current scene
 	var current_scene = get_tree().current_scene
 	
-	# Check if we're in world-1
-	if current_scene.name == "world-1" and current_scene.has_node("UI"):
+	# Check if we're in any world with UI node
+	if current_scene and current_scene.has_node("UI"):
 		return current_scene.get_node("UI")
 	
-	# Check for other worlds
-	if current_scene.has_node("UI"):
-		return current_scene.get_node("UI")
+	# If no UI layer exists and we need one, create it
+	print("Creating new UI layer for Game Over screen")
+	var new_ui_layer = CanvasLayer.new()
+	new_ui_layer.name = "UI"
+	new_ui_layer.layer = 10 # Higher layer to appear on top
+	
+	if current_scene:
+		current_scene.add_child(new_ui_layer)
+		return new_ui_layer
 		
 	return null
 
 func update_hearts_ui() -> void:
 	if hearts_ui != null and hearts_ui.has_method("update_hearts"):
 		hearts_ui.update_hearts(current_hearts)
+		
+func find_game_over_ui() -> Control:
+	var current_scene = get_tree().current_scene
+	
+	# Check for UI node in the scene
+	if current_scene.has_node("UI"):
+		var ui_layer = current_scene.get_node("UI")
+		
+		# Look for GameOver in UI
+		if ui_layer.has_node("GameOver"):
+			return ui_layer.get_node("GameOver")
+	
+	return null
 
 func soltar_poder() -> void:
 	if not has_power_stone:

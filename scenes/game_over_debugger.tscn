@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfmbiqyb7rtj6"]
+
+[ext_resource type="Script" path="res://scripts/game_over_debug.gd" id="1_dwexc"]
+
+[node name="GameOverDebugger" type="Node"]
+script = ExtResource("1_dwexc")

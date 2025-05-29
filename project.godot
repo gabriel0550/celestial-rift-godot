@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="CELESTIAL RIFT"
-run/main_scene="uid://b6gbflpp5qhrc"
+run/main_scene="uid://b52lpv30byotv"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameOverManager="*res://scripts/game_over_manager.gd"
+GameManager="*res://scripts/game_manager.gd"
 
 [display]
 
