@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dthucd84u4pgo" path="res://scripts/game_over.gd" id="1_j3k4m"]
 [ext_resource type="Texture2D" uid="uid://bndcymrejoy5a" path="res://assets/game-over.png" id="2_h7x8w"]
-[ext_resource type="FontFile" uid="uid://c5imtc2ksu2y5" path="res://Enchanted Land fonte.otf" id="3_rwqel"]
+[ext_resource type="FontFile" uid="uid://c5imtc2ksu2y5" path="res://menu_inicial/Enchanted Land fonte.otf" id="3_rwqel"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3

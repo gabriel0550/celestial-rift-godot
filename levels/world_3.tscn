@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://m5pnusdky7pa"]
+[gd_scene load_steps=20 format=3 uid="uid://m5pnusdky7pa"]
 
 [ext_resource type="Texture2D" uid="uid://dqppakq3qj53w" path="res://AssetsNature/Terrain_and_Props.png" id="1_560lt"]
 [ext_resource type="PackedScene" uid="uid://cand8bnvmxf4w" path="res://actors/player.tscn" id="2_obgy7"]
@@ -6,12 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://g52184pbvcpb" path="res://AssetsNature/Props.png" id="3_kyrsd"]
 [ext_resource type="Texture2D" uid="uid://dq6pguc3f2k3s" path="res://AssetsNature/Terrain_and_foreground.png" id="4_xudok"]
 [ext_resource type="Texture2D" uid="uid://cuhfgd4je54vn" path="res://AssetsNature/BG3/BG_3.png" id="5_vjoe1"]
+[ext_resource type="AudioStream" uid="uid://da00xdiqnspo7" path="res://musics/audiomap3.mp3" id="6_fvoow"]
 [ext_resource type="Texture2D" uid="uid://cin3be25uhvqr" path="res://AssetsNature/BG2/BG_2.png" id="6_xudok"]
 [ext_resource type="Texture2D" uid="uid://c1d8ytokydkki" path="res://AssetsNature/BG/BG_1.png" id="7_qjhf8"]
 [ext_resource type="Texture2D" uid="uid://dxmxwhvt3xtau" path="res://AssetsNature/BG/BG_1_loop_alt_2.png" id="9_v6bey"]
 [ext_resource type="PackedScene" uid="uid://bfrog305y5yf6" path="res://brother/brother.tscn" id="10_3o8ha"]
 [ext_resource type="PackedScene" uid="uid://crd1fach11b1l" path="res://enemies plant and tech/Mushroom.tscn" id="11_1x7ll"]
 [ext_resource type="PackedScene" uid="uid://b6x8g0v0j5o1y" path="res://scenes/hearts_ui.tscn" id="12_qsuas"]
+[ext_resource type="PackedScene" uid="uid://guw4sq13s3c0" path="res://enemies plant and tech/plague.tscn" id="13_bsyht"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obgy7"]
 texture = ExtResource("1_560lt")
@@ -1833,6 +1835,12 @@ layer_1/tile_data = PackedInt32Array(1179747, 65538, 23, 1245283, 65538, 24, 131
 [node name="player" parent="." instance=ExtResource("2_obgy7")]
 position = Vector2(139, 715)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="player"]
+position = Vector2(-69.5, -357.5)
+scale = Vector2(0.5, 0.5)
+stream = ExtResource("6_fvoow")
+autoplay = true
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="4" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -1875,8 +1883,8 @@ position = Vector2(2921.33, 341.333)
 texture = ExtResource("9_v6bey")
 
 [node name="Brother" parent="." instance=ExtResource("10_3o8ha")]
-position = Vector2(4487, 671)
-scale = Vector2(-1.8, 1.8)
+position = Vector2(5547, 671)
+scale = Vector2(1.8, 1.8)
 
 [node name="Mushroom" parent="." instance=ExtResource("11_1x7ll")]
 position = Vector2(1446, 743)
@@ -1890,3 +1898,10 @@ position = Vector2(2309, 743)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HeartsUI" parent="UI" instance=ExtResource("12_qsuas")]
+offset_left = -434.0
+offset_top = 74.0
+offset_right = -234.0
+offset_bottom = 124.0
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("13_bsyht")]
+position = Vector2(3352, 733)

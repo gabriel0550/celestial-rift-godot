@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cda5t4xrnrka8"]
+
+[ext_resource type="Texture2D" uid="uid://b2eyglrtxmko5" path="res://AssetsTech/armadilhas/BluePiston1_Anim_v1.0/BluePiston1_Anim_v1.0_spritesheet.png" id="1_xavu3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ybg7k"]
+size = Vector2(32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxvcg"]
+atlas = ExtResource("1_xavu3")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2bjx"]
+atlas = ExtResource("1_xavu3")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yfnr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxvcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2bjx")
+}],
+"loop": true,
+"name": &"trap",
+"speed": 5.0
+}]
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_ybg7k")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 8)
+sprite_frames = SubResource("SpriteFrames_yfnr4")
+animation = &"trap"
+autoplay = "trap"
+frame_progress = 0.264151

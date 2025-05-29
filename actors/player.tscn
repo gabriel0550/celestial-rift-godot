@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cand8bnvmxf4w"]
+[gd_scene load_steps=28 format=3 uid="uid://cand8bnvmxf4w"]
 
 [ext_resource type="Script" uid="uid://3ufiwxyboiji" path="res://scripts/player.gd" id="1_lsxre"]
 [ext_resource type="Texture2D" uid="uid://digwl6baltf3g" path="res://hero/adventurer-Sheet.png" id="2_mvpqy"]
@@ -10,31 +10,15 @@ height = 35.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tue77"]
 atlas = ExtResource("2_mvpqy")
-region = Rect2(50, 222, 50, 37)
+region = Rect2(250, 148, 50, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_33vod"]
 atlas = ExtResource("2_mvpqy")
-region = Rect2(100, 222, 50, 37)
+region = Rect2(200, 148, 50, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_er1rk"]
 atlas = ExtResource("2_mvpqy")
-region = Rect2(150, 222, 50, 37)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e7yfm"]
-atlas = ExtResource("2_mvpqy")
-region = Rect2(200, 222, 50, 37)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ua707"]
-atlas = ExtResource("2_mvpqy")
-region = Rect2(50, 259, 50, 37)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rkwqa"]
-atlas = ExtResource("2_mvpqy")
-region = Rect2(100, 259, 50, 37)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_41w2c"]
-atlas = ExtResource("2_mvpqy")
-region = Rect2(150, 259, 50, 37)
+region = Rect2(300, 148, 50, 37)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mvpqy"]
 atlas = ExtResource("2_mvpqy")
@@ -119,20 +103,8 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_er1rk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_e7yfm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ua707")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rkwqa")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_41w2c")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
 "speed": 5.0
 }, {
@@ -236,9 +208,8 @@ editor_draw_limits = true
 position = Vector2(0.5, -20)
 scale = Vector2(1, 1.075)
 sprite_frames = SubResource("SpriteFrames_tue77")
-animation = &"sword_attack"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.278844
 
 [node name="AttackArea" type="Area2D" parent="."]
 

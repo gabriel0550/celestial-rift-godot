@@ -63,8 +63,7 @@ func atualizar_animacao():
 		if velocity.x == 0:
 			$AnimatedSprite2D.play("idle")
 		else:
-			if not $AnimatedSprite2D.is_playing():
-				$AnimatedSprite2D.play("walk")
+			$AnimatedSprite2D.play("walk")  # Correção: toca sempre que está andando
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):

@@ -1,9 +1,16 @@
-res://scripts
 res://enemies plant and tech
+res://enemies plant and tech/Ninja
 res://hero
-res://
 res://assets
+res://menu_inicial
+res://enemies plant and tech/Enemy04
 res://brother
+res://AssetsTech
+res://AssetsTech/armadilhas/BrownCircular1_Anim_v1.0
+res://AssetsTech/armadilhas/YellowSpike1_Anim_v1.0
+res://AssetsTech/armadilhas/BluePiston1_Anim_v1.0
+res://scripts
+res://
 res://levels
 res://scenes
 res://assets/enemy_fire

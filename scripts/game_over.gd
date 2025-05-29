@@ -2,44 +2,44 @@ extends Control
 
 signal restart_game
 
-# Animation properties
+# Animação da imagem
 var image_scale = Vector2(0.1, 0.1)
 var target_scale = Vector2(1.0, 1.0)
 var current_rotation = 0.0
 var pulse_amount = 0.0
-var pulse_speed = 5.0
 var button_appear_timer = 0.0
-var button_appear_delay = 1.5 # seconds before button appears
+var button_appear_delay = 1.5
 var show_button = false
 
-# Particles
+# Partículas
 var particles = []
 var max_particles = 30
-var particle_speed = 50.0
 var particle_colors = [
-	Color(1, 0, 0, 0.8),  # Red
-	Color(0.8, 0.1, 0.1, 0.8),  # Dark red
-	Color(1, 0.5, 0, 0.8),  # Orange
-	Color(0.8, 0, 0, 0.8)   # Blood red
+	Color(1, 0, 0, 0.8),
+	Color(0.8, 0.1, 0.1, 0.8),
+	Color(1, 0.5, 0, 0.8),
+	Color(0.8, 0, 0, 0.8)
 ]
 
 func _ready():
-	# Ensure we start hidden regardless of scene setup
 	visible = false
-	if has_node("GameOverImage"):
+
+	# Inicializa escala e opacidade
+	if $GameOverImage:
 		$GameOverImage.scale = image_scale
-	if has_node("RestartButton"):
+
+	if $RestartButton:
 		$RestartButton.modulate.a = 0.0
 		$RestartButton.visible = false
-	
-	# Debug output
-	print("Game Over UI initialized and hidden")
-	
-	# Initialize particles
-	for i in range(max_particles):
+
+		# Conecta o botão se não estiver conectado
+		if not $RestartButton.pressed.is_connected(_on_restart_button_pressed):
+			$RestartButton.pressed.connect(_on_restart_button_pressed)
+
+	# Gera partículas
+	for i in max_particles:
 		particles.append({
-			"position": Vector2(randf_range(0, get_viewport_rect().size.x), 
-								randf_range(0, get_viewport_rect().size.y)),
+			"position": Vector2(randf_range(0, get_viewport_rect().size.x), randf_range(0, get_viewport_rect().size.y)),
 			"velocity": Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized() * randf_range(20, 50),
 			"size": randf_range(3, 8),
 			"color": particle_colors[randi() % particle_colors.size()],
@@ -49,45 +49,33 @@ func _ready():
 func _process(delta):
 	if not visible:
 		return
-	
-	# Skip processing if required nodes are missing
-	if not has_node("GameOverImage") or not has_node("RestartButton"):
-		return
-		
-	# Image animation
-	if image_scale.x < target_scale.x:
-		image_scale = image_scale.lerp(target_scale, delta * 3.0)
-		current_rotation = sin(Time.get_ticks_msec() / 100.0) * 0.05
-		$GameOverImage.scale = image_scale
-		$GameOverImage.rotation = current_rotation
-	else:
-		# Pulsing effect once full size is reached
-		pulse_amount = sin(Time.get_ticks_msec() / 500.0) * 0.05
-		$GameOverImage.scale = target_scale * (1.0 + pulse_amount)
-	
-	# Button appearance timer
+
+	if $GameOverImage:
+		if image_scale.x < target_scale.x:
+			image_scale = image_scale.lerp(target_scale, delta * 3.0)
+			current_rotation = sin(Time.get_ticks_msec() / 100.0) * 0.05
+			$GameOverImage.scale = image_scale
+			$GameOverImage.rotation = current_rotation
+		else:
+			pulse_amount = sin(Time.get_ticks_msec() / 500.0) * 0.05
+			$GameOverImage.scale = target_scale * (1.0 + pulse_amount)
+
 	if not show_button:
 		button_appear_timer += delta
 		if button_appear_timer >= button_appear_delay:
 			show_button = true
 			$RestartButton.visible = true
-	
-	# Button fade-in
+
 	if show_button and $RestartButton.modulate.a < 1.0:
 		$RestartButton.modulate.a += delta * 0.8
 		$RestartButton.rotation = sin(Time.get_ticks_msec() / 300.0) * 0.1
-	
-	# Update particles
+
 	update_particles(delta)
-	
-	# Force redraw for particles
 	queue_redraw()
 
 func _draw():
 	if not visible:
 		return
-		
-	# Draw particles
 	for particle in particles:
 		draw_circle(particle.position, particle.size, particle.color)
 
@@ -95,41 +83,38 @@ func update_particles(delta):
 	for particle in particles:
 		particle.position += particle.velocity * delta
 		particle.rotation += delta * 2.0
-		
-		# Wrap particles around screen
-		var viewport_size = get_viewport_rect().size
+
+		var size = get_viewport_rect().size
 		if particle.position.x < 0:
-			particle.position.x = viewport_size.x
-		elif particle.position.x > viewport_size.x:
+			particle.position.x = size.x
+		elif particle.position.x > size.x:
 			particle.position.x = 0
 		if particle.position.y < 0:
-			particle.position.y = viewport_size.y
-		elif particle.position.y > viewport_size.y:
+			particle.position.y = size.y
+		elif particle.position.y > size.y:
 			particle.position.y = 0
 
 func show_game_over():
-	# Make sure we're visible
 	visible = true
-	
-	# Reset animation state
 	image_scale = Vector2(0.1, 0.1)
 	button_appear_timer = 0.0
 	show_button = false
-	
-	# Make sure we have the required nodes before accessing them
-	if has_node("GameOverImage"):
+
+	if $GameOverImage:
 		$GameOverImage.scale = image_scale
-	else:
-		print("Error: GameOverImage node not found")
-		
-	if has_node("RestartButton"):
+	if $RestartButton:
 		$RestartButton.modulate.a = 0.0
 		$RestartButton.visible = false
-	else:
-		print("Error: RestartButton node not found")
-		
-	print("Game Over UI activated")
+
+	print("Tela de Game Over ativada")
 
 func _on_restart_button_pressed():
+	print("Botão de reiniciar pressionado")
 	emit_signal("restart_game")
-	get_tree().reload_current_scene()
+
+	# Reinicia a cena atual de forma segura
+	var current_scene_path = get_tree().current_scene.scene_file_path
+	if current_scene_path != "":
+		get_tree().change_scene_to_file(current_scene_path)
+	else:
+		print("Erro: caminho da cena atual não encontrado")

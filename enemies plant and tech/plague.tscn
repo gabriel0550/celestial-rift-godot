@@ -1,0 +1,178 @@
+[gd_scene load_steps=36 format=3 uid="uid://guw4sq13s3c0"]
+
+[ext_resource type="Script" uid="uid://b618l4lxj3vl3" path="res://enemies plant and tech/plague.gd" id="1_2q3lm"]
+[ext_resource type="Texture2D" uid="uid://c3svuo12q0cyh" path="res://enemies plant and tech/Enemy04/idle01.png" id="1_pwbu1"]
+[ext_resource type="Texture2D" uid="uid://d1mbkjav2mfh5" path="res://enemies plant and tech/Enemy04/idle02.png" id="2_2q3lm"]
+[ext_resource type="Texture2D" uid="uid://caeuy6otvnswc" path="res://enemies plant and tech/Enemy04/hit01.png" id="2_ighjy"]
+[ext_resource type="Texture2D" uid="uid://cahk1rmghrgey" path="res://enemies plant and tech/Enemy04/idle03.png" id="3_2jtsh"]
+[ext_resource type="Texture2D" uid="uid://dp5tlvmsindoq" path="res://enemies plant and tech/Enemy04/hit02.png" id="3_wwdhm"]
+[ext_resource type="Texture2D" uid="uid://uhk5ru0ncolm" path="res://enemies plant and tech/Enemy04/idle04.png" id="4_ighjy"]
+[ext_resource type="Texture2D" uid="uid://b43povmkqw4qi" path="res://enemies plant and tech/Enemy04/idle05.png" id="5_wwdhm"]
+[ext_resource type="Texture2D" uid="uid://bhqxmq5guyo2x" path="res://enemies plant and tech/Enemy04/idle06.png" id="6_wv0t3"]
+[ext_resource type="Texture2D" uid="uid://c3vnffdvt6xgq" path="res://enemies plant and tech/Enemy04/idle07.png" id="7_bqetx"]
+[ext_resource type="Texture2D" uid="uid://crwxe6i71i1tq" path="res://enemies plant and tech/Enemy04/walk01.png" id="8_twq6r"]
+[ext_resource type="Texture2D" uid="uid://cnk33o6c7bja8" path="res://enemies plant and tech/Enemy04/walk02.png" id="9_1do6g"]
+[ext_resource type="Texture2D" uid="uid://2t7rk84tbdgs" path="res://enemies plant and tech/Enemy04/walk03.png" id="10_5bvfm"]
+[ext_resource type="Texture2D" uid="uid://j5o71kpix1ds" path="res://enemies plant and tech/Enemy04/walk04.png" id="11_b0mad"]
+[ext_resource type="Texture2D" uid="uid://dph3pwjuas6yl" path="res://enemies plant and tech/Enemy04/walk05.png" id="12_6ksvi"]
+[ext_resource type="Texture2D" uid="uid://bmthfuv5ayf08" path="res://enemies plant and tech/Enemy04/walk06.png" id="13_7p34i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h8e3b"]
+size = Vector2(32, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wv0t3"]
+atlas = ExtResource("2_ighjy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqetx"]
+atlas = ExtResource("3_wwdhm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuy0t"]
+atlas = ExtResource("1_pwbu1")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aafx8"]
+atlas = ExtResource("2_2q3lm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcgi5"]
+atlas = ExtResource("3_2jtsh")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvc0h"]
+atlas = ExtResource("4_ighjy")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn1t3"]
+atlas = ExtResource("5_wwdhm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6icf"]
+atlas = ExtResource("6_wv0t3")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8801"]
+atlas = ExtResource("7_bqetx")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlsgx"]
+atlas = ExtResource("8_twq6r")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l84w2"]
+atlas = ExtResource("9_1do6g")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1a0bk"]
+atlas = ExtResource("10_5bvfm")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeo5t"]
+atlas = ExtResource("11_b0mad")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0lde"]
+atlas = ExtResource("12_6ksvi")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6wl0"]
+atlas = ExtResource("13_7p34i")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ues16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wv0t3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqetx")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuy0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aafx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcgi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvc0h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn1t3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6icf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8801")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlsgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l84w2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1a0bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jeo5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0lde")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6wl0")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apix1"]
+size = Vector2(122, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upcjb"]
+size = Vector2(121, 20)
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["enemy"]]
+scale = Vector2(1.3, 1.3)
+script = ExtResource("1_2q3lm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_h8e3b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(14, -4)
+sprite_frames = SubResource("SpriteFrames_ues16")
+animation = &"death"
+autoplay = "idle"
+frame = 1
+frame_progress = 1.0
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(52, 5)
+shape = SubResource("RectangleShape2D_apix1")
+
+[node name="VisionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionArea"]
+position = Vector2(52.5, 5)
+shape = SubResource("RectangleShape2D_upcjb")

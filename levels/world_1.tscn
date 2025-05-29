@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://b52lpv30byotv"]
+[gd_scene load_steps=38 format=3 uid="uid://b52lpv30byotv"]
 
 [ext_resource type="Texture2D" uid="uid://rw5ioyf8qfbp" path="res://assets/GandalfHardcore Hell Tiles 32x32.png" id="1_4nbp6"]
 [ext_resource type="Texture2D" uid="uid://0hjackm4icie" path="res://assets/GandalfHardcore Hell Tiles 32x32 chão.png" id="2_3fa71"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://m7n42sgpc0e0" path="res://scenes/inimigo_voador.tscn" id="19_1jfbe"]
 [ext_resource type="PackedScene" uid="uid://c1jekgrsslwpk" path="res://scenes/enemy.tscn" id="19_ivm7e"]
 [ext_resource type="PackedScene" uid="uid://yyug7cgm3trk" path="res://scenes/inimigo.tscn" id="20_1jfbe"]
-[ext_resource type="AudioStream" uid="uid://ctujp54gamuj5" path="res://backmusic.mp3" id="21_qx8j2"]
 [ext_resource type="Texture2D" uid="uid://c4tbwnvbmdqj5" path="res://assets/Fire sheet.png" id="22_qieny"]
 [ext_resource type="Texture2D" uid="uid://bro7oi0gkmfsw" path="res://assets/Large Statue.png" id="23_0wv4g"]
 [ext_resource type="PackedScene" uid="uid://nsnxbpagvnvb" path="res://scenes/flying_slider.tscn" id="24_wb1fk"]
@@ -703,6 +702,13 @@ layer_2/name = "decoração"
 [node name="player" parent="." instance=ExtResource("4_14j8s")]
 position = Vector2(216, 232)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="player"]
+position = Vector2(-108, -116)
+scale = Vector2(0.5, 0.5)
+autoplay = true
+max_distance = 4096.0
+panning_strength = 3.0
+
 [node name="bg" type="ParallaxBackground" parent="."]
 
 [node name="4" type="ParallaxLayer" parent="bg"]
@@ -1007,12 +1013,6 @@ position = Vector2(7339, 49)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("23_0wv4g")
 flip_h = true
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("21_qx8j2")
-autoplay = true
-max_distance = 4096.0
-panning_strength = 3.0
 
 [node name="FlyingSlider" parent="." instance=ExtResource("24_wb1fk")]
 position = Vector2(2572, 185)
