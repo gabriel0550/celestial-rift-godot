@@ -3433,4 +3433,4 @@ script = null
 [node name="InitGameOver" parent="." instance=ExtResource("18_cv7df")]
 
 [node name="inimigo" parent="." instance=ExtResource("17_3jmqf")]
-position = Vector2(838, 651)
+position = Vector2(578, 684)

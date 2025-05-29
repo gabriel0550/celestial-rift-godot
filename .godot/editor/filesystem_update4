@@ -34,3 +34,4 @@ res://scripts/world_2_game_over.gd
 res://scenes/init_game_over.tscn
 res://scripts/game_over_debug.gd
 res://scripts/game_over_manager.gd
+res://scripts/hearts_ui_world_2.gd

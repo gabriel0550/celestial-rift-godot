@@ -855,10 +855,10 @@ anchor_left = 0.352
 anchor_top = 0.192
 anchor_right = 0.478
 anchor_bottom = 0.271
-offset_left = 313.552
-offset_top = 111.408
-offset_right = 531.652
-offset_bottom = 204.058
+offset_left = -345.448
+offset_top = -44.592
+offset_right = -127.348
+offset_bottom = 48.058
 
 [node name="HeartsContainer2" type="HBoxContainer" parent="UI/HeartsUI"]
 layout_mode = 1
