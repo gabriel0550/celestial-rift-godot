@@ -27,6 +27,8 @@ var initial_y_position = 0.0
 func _ready():
 	player = get_node("/root/world-1/player")
 	if player == null:
+		player = get_node("/root/world_2/player")
+	if player == null:
 		print("Warning: Player not found!")
 	add_to_group("enemy")
 	

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const SPEED = 100.0
-const ATTACK_RANGE = 200.0
+const ATTACK_RANGE = 400.0
 const WALK_DISTANCE = 50.0
 const ATTACK_COOLDOWN = 3.0
 
@@ -31,6 +31,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready() -> void:
 	# Find the player node
 	player = get_node("/root/world-1/player")
+	if player == null:
+		player = get_node("/root/world_2/player")
 	if player == null:
 		print("Warning: Player not found!")
 	# Add enemy to the enemy group

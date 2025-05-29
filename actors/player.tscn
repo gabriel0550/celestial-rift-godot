@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://3ufiwxyboiji" path="res://scripts/player.gd" id="1_lsxre"]
 [ext_resource type="Texture2D" uid="uid://digwl6baltf3g" path="res://hero/adventurer-Sheet.png" id="2_mvpqy"]
+[ext_resource type="PackedScene" uid="uid://hp3k0pe0x6w8" path="res://powers/fire.tscn" id="3_fire"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ol04"]
 radius = 13.0
@@ -217,6 +218,7 @@ size = Vector2(51.625, 6)
 texture_filter = 1
 scale = Vector2(2, 2)
 script = ExtResource("1_lsxre")
+poder_scene = ExtResource("3_fire")
 
 [node name="collision" type="CollisionShape2D" parent="."]
 position = Vector2(1, -17)

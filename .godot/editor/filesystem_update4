@@ -1,12 +1,26 @@
 res://levels/world_1.tscn
+res://scripts/player.gd
 res://actors/player.tscn
 res://scenes/inimigo.tscn
 res://scenes/inimigo_voador.tscn
 res://levels/world_2.tscn
 res://levels/world_3.tscn
-res://scenes/hearts_ui.tscn
 res://scenes/flying_slider.tscn
-res://scenes/enemy.tscn
 res://enemies plant and tech/Mushroom.tscn
+res://scripts/enemy.gd
+res://scripts/power_fire.gd
+res://scenes/hearts_ui.tscn
+res://inimigo.gd
+res://enemies plant and tech/Robot.gd
+res://scripts/collision_dano_1.gd
+res://scripts/fire_portal.gd
+res://scripts/hearts_ui.gd
+res://scripts/inimigo_voador.gd
+res://scripts/menu_inicial.gd
 res://enemies plant and tech/mushroom.gd
-res://scripts/player.gd
+res://scripts/pause_menu.gd
+res://scripts/pedra_pegar.gd
+res://scripts/tech_portal.gd
+res://scripts/thorn.gd
+res://scenes/GameOver.tscn
+res://scenes/canvas_layer.tscn

@@ -1887,13 +1887,6 @@ position = Vector2(730, 744)
 [node name="Mushroom3" parent="." instance=ExtResource("11_1x7ll")]
 position = Vector2(2309, 743)
 
-[node name="HeartsUI" parent="." instance=ExtResource("12_qsuas")]
-anchors_preset = 0
-anchor_left = 0.0
-anchor_right = 0.0
-offset_left = 823.0
-offset_top = 254.0
-offset_right = 1023.0
-offset_bottom = 294.0
-grow_horizontal = 1
-metadata/_edit_use_anchors_ = true
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HeartsUI" parent="UI" instance=ExtResource("12_qsuas")]

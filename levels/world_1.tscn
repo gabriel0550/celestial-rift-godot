@@ -1,10 +1,9 @@
-[gd_scene load_steps=43 format=3 uid="uid://b52lpv30byotv"]
+[gd_scene load_steps=39 format=3 uid="uid://b52lpv30byotv"]
 
 [ext_resource type="Texture2D" uid="uid://rw5ioyf8qfbp" path="res://assets/GandalfHardcore Hell Tiles 32x32.png" id="1_4nbp6"]
 [ext_resource type="Texture2D" uid="uid://0hjackm4icie" path="res://assets/GandalfHardcore Hell Tiles 32x32 chão.png" id="2_3fa71"]
 [ext_resource type="Texture2D" uid="uid://b5su0suyvk4rj" path="res://assets/GandalfHardcore Hell Tiles 32x32 seputura .png" id="3_wasmq"]
 [ext_resource type="PackedScene" uid="uid://cand8bnvmxf4w" path="res://actors/player.tscn" id="4_14j8s"]
-[ext_resource type="PackedScene" uid="uid://hp3k0pe0x6w8" path="res://powers/fire.tscn" id="5_085hd"]
 [ext_resource type="Texture2D" uid="uid://cjmlaxknaufgu" path="res://assets/1.png" id="6_7qafx"]
 [ext_resource type="Texture2D" uid="uid://b3qql8787p2q7" path="res://assets/2.png" id="7_65tgg"]
 [ext_resource type="Texture2D" uid="uid://cj8yyd8gxyxqe" path="res://assets/3.png" id="8_kctb4"]
@@ -13,9 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://36wucugoghnj" path="res://assets/baixados (1).png" id="10_bn8vb"]
 [ext_resource type="PackedScene" uid="uid://b6x8g0v0j5o1y" path="res://scenes/hearts_ui.tscn" id="12_6r8k1"]
 [ext_resource type="Script" uid="uid://dpd33rixuthok" path="res://scripts/thorn.gd" id="12_hclqf"]
-[ext_resource type="PackedScene" uid="uid://cl2wsgmwpj0ur" path="res://scenes/GameOver.tscn" id="16_uc2ke"]
-[ext_resource type="Script" uid="uid://c7o2ntvmmou8e" path="res://scripts/game_over.gd" id="17_ivm7e"]
-[ext_resource type="Texture2D" uid="uid://bndcymrejoy5a" path="res://assets/game-over.png" id="18_1jfbe"]
 [ext_resource type="PackedScene" uid="uid://cdnqwj2m0yyo" path="res://scenes/canvas_layer.tscn" id="18_uc2ke"]
 [ext_resource type="PackedScene" uid="uid://m7n42sgpc0e0" path="res://scenes/inimigo_voador.tscn" id="19_1jfbe"]
 [ext_resource type="PackedScene" uid="uid://c1jekgrsslwpk" path="res://scenes/enemy.tscn" id="19_ivm7e"]
@@ -706,7 +702,6 @@ layer_2/name = "decoração"
 
 [node name="player" parent="." instance=ExtResource("4_14j8s")]
 position = Vector2(216, 232)
-poder_scene = ExtResource("5_085hd")
 
 [node name="bg" type="ParallaxBackground" parent="."]
 
@@ -879,37 +874,6 @@ offset_bottom = -24.56
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
-
-[node name="GameOver" parent="." instance=ExtResource("16_uc2ke")]
-visibility_layer = 524289
-script = ExtResource("17_ivm7e")
-
-[node name="GameOverImage" type="TextureRect" parent="GameOver"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1279.0
-offset_top = -229.0
-offset_right = 1496.0
-offset_bottom = -41.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("18_1jfbe")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="RestartButton" type="Button" parent="GameOver"]
-visible = false
-layout_mode = 0
-offset_left = 1293.0
-offset_top = -78.0
-offset_right = 1493.0
-offset_bottom = -28.0
-text = "Restart"
 
 [node name="enemy" parent="." instance=ExtResource("19_ivm7e")]
 position = Vector2(3680, 254)

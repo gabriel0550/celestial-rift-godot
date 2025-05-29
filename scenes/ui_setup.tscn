@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq53xvqqxs8ak"]
+
+[ext_resource type="Script" path="res://scripts/ui_setup.gd" id="1_24vko"]
+
+[node name="UISetup" type="Node"]
+script = ExtResource("1_24vko")

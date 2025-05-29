@@ -24,6 +24,11 @@ var can_attack := true
 
 var attack_timer: Timer = null
 
+# Fire attack cooldown variables
+var fire_attack_cooldown := 1.0 # seconds
+var can_fire_attack := true
+var fire_attack_timer: Timer = null
+
 func _ready() -> void:
 	add_to_group("player")
 	print("Player added to 'player' group")
@@ -34,15 +39,35 @@ func _ready() -> void:
 	if animated_sprite == null:
 		print("Warning: AnimatedSprite2D not found!")
 
-	hearts_ui = get_node("/root/world-1/UI/HeartsUI")
+	# Try to find HeartsUI in different world configurations and detect current world
+	hearts_ui = get_node("/root/world-1/UI/HeartsUI")  # World 1 path
 	if hearts_ui == null:
-		print("Warning: HeartsUI not found!")
+		hearts_ui = get_node("/root/world_2/UI/HeartsUI")  # World 2 path
+		if hearts_ui != null:
+			# Player is in world_2, enable power stone automatically
+			has_power_stone = true
+			print("World 2 detected - Power stone enabled!")
+	if hearts_ui == null:
+		hearts_ui = get_node("/root/world_3/UI/HeartsUI")  # World 3 path
+		if hearts_ui != null:
+			# Player is in world_3, enable power stone automatically  
+			has_power_stone = true
+			print("World 3 detected - Power stone enabled!")
+	
+	if hearts_ui == null:
+		print("Warning: HeartsUI not found in any world!")
 	else:
 		print("HeartsUI found successfully")
 
-	game_over_screen = get_node("/root/world-1/GameOver")
+	# Try to find GameOver screen in different world configurations
+	game_over_screen = get_node("/root/world-1/UI/GameOver")  # World 1 path
 	if game_over_screen == null:
-		print("Warning: Game Over screen not found!")
+		game_over_screen = get_node("/root/world_2/UI/GameOver")  # World 2 path
+	if game_over_screen == null:
+		game_over_screen = get_node("/root/world_3/UI/GameOver")  # World 3 path
+	
+	if game_over_screen == null:
+		print("Warning: Game Over screen not found in any world!")
 	else:
 		print("Game Over screen found successfully")
 
@@ -54,6 +79,13 @@ func _ready() -> void:
 	attack_timer.one_shot = true
 	attack_timer.connect("timeout", Callable(self, "_on_attack_timer_timeout"))
 	add_child(attack_timer)
+
+	# Criar e configurar o Timer para cooldown do ataque de fogo
+	fire_attack_timer = Timer.new()
+	fire_attack_timer.wait_time = fire_attack_cooldown
+	fire_attack_timer.one_shot = true
+	fire_attack_timer.connect("timeout", Callable(self, "_on_fire_attack_timer_timeout"))
+	add_child(fire_attack_timer)
 
 func _physics_process(delta: float) -> void:
 	if is_dead:
@@ -82,10 +114,15 @@ func _physics_process(delta: float) -> void:
 
 	# Ataque à distância (poder)
 	if Input.is_action_just_pressed("ui_attack"):
-		print("Tecla pressionada!")
-		soltar_poder()
-		if animated_sprite and not animated_sprite.is_playing():
-			animated_sprite.play("attack")
+		if can_fire_attack:
+			print("Tecla pressionada!")
+			soltar_poder()
+			if animated_sprite and not animated_sprite.is_playing():
+				animated_sprite.play("attack")
+			can_fire_attack = false
+			fire_attack_timer.start()
+		else:
+			print("Fire attack on cooldown!")
 
 	# Ataque de espada (corpo a corpo)
 	if Input.is_action_just_pressed("ui_sword_attack") and can_attack:
@@ -144,11 +181,44 @@ func die() -> void:
 	print("Player died!")
 	velocity = Vector2.ZERO
 
-	if game_over_screen != null:
-		if game_over_screen.has_method("show_game_over"):
-			game_over_screen.show_game_over()
+	# Use the GameManager to show the game over screen
+	if get_node_or_null("/root/GameManager") != null:
+		get_node("/root/GameManager").show_game_over()
+		print("Using GameManager for game over")
+	else:
+		print("GameManager not found, trying fallback methods")
+		
+		# Find or create the Game Over UI as fallback
+		var ui_layer = find_ui_layer()
+		if ui_layer and not ui_layer.has_node("GameOver"):
+			var game_over_scene = load("res://scenes/GameOver.tscn")
+			if game_over_scene:
+				var game_over_instance = game_over_scene.instantiate()
+				ui_layer.add_child(game_over_instance)
+				game_over_screen = game_over_instance
+				print("GameOver UI added dynamically as fallback")
+				
+		if game_over_screen != null:
+			if game_over_screen.has_method("show_game_over"):
+				game_over_screen.show_game_over()
+			else:
+				print("Error: Game Over screen doesn't have show_game_over method!")
 		else:
-			print("Error: Game Over screen doesn't have show_game_over method!")
+			print("Error: Game Over screen not found or created!")
+
+func find_ui_layer() -> Node:
+	# Try to find UI in the current scene
+	var current_scene = get_tree().current_scene
+	
+	# Check if we're in world-1
+	if current_scene.name == "world-1" and current_scene.has_node("UI"):
+		return current_scene.get_node("UI")
+	
+	# Check for other worlds
+	if current_scene.has_node("UI"):
+		return current_scene.get_node("UI")
+		
+	return null
 
 func update_hearts_ui() -> void:
 	if hearts_ui != null and hearts_ui.has_method("update_hearts"):
@@ -174,7 +244,7 @@ func soltar_poder() -> void:
 		return
 
 	parent.add_child(poder)
-	poder.position = position + Vector2(10 * sign(animated_sprite.scale.x), -10)
+	poder.position = position + Vector2(10 * sign(animated_sprite.scale.x), -40)
 
 	if poder.has_method("set_direction"):
 		poder.set_direction(Vector2(sign(animated_sprite.scale.x), 0))
@@ -205,3 +275,6 @@ func _on_attack_timer_timeout() -> void:
 	can_attack = true
 	if animated_sprite:
 		animated_sprite.play("idle")
+
+func _on_fire_attack_timer_timeout() -> void:
+	can_fire_attack = true

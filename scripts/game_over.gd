@@ -1,62 +1,112 @@
 extends Control
 
+signal restart_game
+
+# Animation properties
+var image_scale = Vector2(0.1, 0.1)
+var target_scale = Vector2(1.0, 1.0)
+var current_rotation = 0.0
+var pulse_amount = 0.0
+var pulse_speed = 5.0
+var button_appear_timer = 0.0
+var button_appear_delay = 1.5 # seconds before button appears
+var show_button = false
+
+# Particles
+var particles = []
+var max_particles = 30
+var particle_speed = 50.0
+var particle_colors = [
+	Color(1, 0, 0, 0.8),  # Red
+	Color(0.8, 0.1, 0.1, 0.8),  # Dark red
+	Color(1, 0.5, 0, 0.8),  # Orange
+	Color(0.8, 0, 0, 0.8)   # Blood red
+]
+
 func _ready():
-	# Make sure the Control node fills the entire viewport
-	anchor_right = 1
-	anchor_bottom = 1
-	offset_right = 0
-	offset_bottom = 0
+	# Hide initially
+	visible = false
+	$GameOverImage.scale = image_scale
+	$RestartButton.modulate.a = 0.0
+	$RestartButton.visible = false
 	
-	# Hide the Game Over screen when the game starts
-	hide()
+	# Initialize particles
+	for i in range(max_particles):
+		particles.append({
+			"position": Vector2(randf_range(0, get_viewport_rect().size.x), 
+								randf_range(0, get_viewport_rect().size.y)),
+			"velocity": Vector2(randf_range(-1, 1), randf_range(-1, 1)).normalized() * randf_range(20, 50),
+			"size": randf_range(3, 8),
+			"color": particle_colors[randi() % particle_colors.size()],
+			"rotation": randf_range(0, TAU)
+		})
+
+func _process(delta):
+	if not visible:
+		return
+		
+	# Image animation
+	if image_scale.x < target_scale.x:
+		image_scale = image_scale.lerp(target_scale, delta * 3.0)
+		current_rotation = sin(Time.get_ticks_msec() / 100.0) * 0.05
+		$GameOverImage.scale = image_scale
+		$GameOverImage.rotation = current_rotation
+	else:
+		# Pulsing effect once full size is reached
+		pulse_amount = sin(Time.get_ticks_msec() / 500.0) * 0.05
+		$GameOverImage.scale = target_scale * (1.0 + pulse_amount)
 	
-	# Set up the Game Over message to be centered
-	var game_over_image = $GameOverImage
-	if game_over_image:
-		game_over_image.anchor_left = 0.5
-		game_over_image.anchor_right = 0.5
-		game_over_image.anchor_top = 0.5
-		game_over_image.anchor_bottom = 0.5
-		game_over_image.position = Vector2(0, -50)  # Slightly above center
+	# Button appearance timer
+	if not show_button:
+		button_appear_timer += delta
+		if button_appear_timer >= button_appear_delay:
+			show_button = true
+			$RestartButton.visible = true
 	
-	# Set up the Restart button
-	var restart_button = $RestartButton
-	if restart_button:
-		restart_button.anchor_left = 0.5
-		restart_button.anchor_right = 0.5
-		restart_button.anchor_top = 0.5
-		restart_button.anchor_bottom = 0.5
-		restart_button.position = Vector2(0, 50)  # Slightly below center
-		# Make sure the button is mouse filter is set to stop
-		restart_button.mouse_filter = Control.MOUSE_FILTER_STOP
-		# Connect the button signal
-		if not restart_button.pressed.is_connected(_on_restart_button_pressed):
-			restart_button.pressed.connect(_on_restart_button_pressed)
+	# Button fade-in
+	if show_button and $RestartButton.modulate.a < 1.0:
+		$RestartButton.modulate.a += delta * 0.8
+		$RestartButton.rotation = sin(Time.get_ticks_msec() / 300.0) * 0.1
+	
+	# Update particles
+	update_particles(delta)
+	
+	# Force redraw for particles
+	queue_redraw()
+
+func _draw():
+	if not visible:
+		return
+		
+	# Draw particles
+	for particle in particles:
+		draw_circle(particle.position, particle.size, particle.color)
+
+func update_particles(delta):
+	for particle in particles:
+		particle.position += particle.velocity * delta
+		particle.rotation += delta * 2.0
+		
+		# Wrap particles around screen
+		var viewport_size = get_viewport_rect().size
+		if particle.position.x < 0:
+			particle.position.x = viewport_size.x
+		elif particle.position.x > viewport_size.x:
+			particle.position.x = 0
+		if particle.position.y < 0:
+			particle.position.y = viewport_size.y
+		elif particle.position.y > viewport_size.y:
+			particle.position.y = 0
 
 func show_game_over():
-	# Make sure this control node is on top of other UI elements
-	show()
-	move_to_front()
-	
-	# Get the viewport size
-	var viewport_size = get_viewport_rect().size
-	
-	# Center the Game Over screen
-	position = Vector2.ZERO
-	size = viewport_size
-	
-	# Center the Game Over image and Restart button
-	var game_over_image = $GameOverImage
-	if game_over_image:
-		game_over_image.position = Vector2(viewport_size.x / 2, viewport_size.y / 2 - 50)
-	
-	var restart_button = $RestartButton
-	if restart_button:
-		restart_button.position = Vector2(viewport_size.x / 2, viewport_size.y / 2 + 50)
+	visible = true
+	image_scale = Vector2(0.1, 0.1)
+	$GameOverImage.scale = image_scale
+	button_appear_timer = 0.0
+	show_button = false
+	$RestartButton.modulate.a = 0.0
+	$RestartButton.visible = false
 
 func _on_restart_button_pressed():
-	print("Restart button pressed!")
-	# Hide the Game Over screen
-	hide()
-	# Reload the current scene
-	get_tree().reload_current_scene() 
+	emit_signal("restart_game")
+	get_tree().reload_current_scene()

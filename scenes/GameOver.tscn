@@ -1,24 +1,66 @@
-[gd_scene format=3 uid="uid://cl2wsgmwpj0ur"]
+[gd_scene load_steps=4 format=3 uid="uid://cl2wsgmwpj0ur"]
+
+[ext_resource type="Script" path="res://scripts/game_over.gd" id="1_j3k4m"]
+[ext_resource type="Texture2D" uid="uid://bndcymrejoy5a" path="res://assets/game-over.png" id="2_h7x8w"]
+[ext_resource type="FontFile" uid="uid://p1o0mgwmww1q" path="res://Enchanted Land fonte.otf" id="3_rwqel"]
 
 [node name="GameOver" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_j3k4m")
 
-[node name="GameOver#GameOverImage" type="TextureRect" parent="."]
-layout_mode = 0
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0980392, 0.0470588, 0.0470588, 0.639216)
+
+[node name="GameOverImage" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -125.0
+offset_right = 150.0
+offset_bottom = -25.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(150, 50)
+texture = ExtResource("2_h7x8w")
+expand_mode = 1
+stretch_mode = 5
 
-[node name="GameOver#RestartButton" type="Button" parent="."]
-layout_mode = 0
+[node name="RestartButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = 50.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 25)
+theme_override_colors/font_color = Color(0.972549, 0.686275, 0.372549, 1)
+theme_override_colors/font_hover_color = Color(1, 0.521569, 0.388235, 1)
+theme_override_colors/font_outline_color = Color(0.835294, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_rwqel")
+theme_override_font_sizes/font_size = 36
+text = "RETRY"
+flat = true
+
+[connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]

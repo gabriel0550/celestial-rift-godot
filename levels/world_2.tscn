@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b6gbflpp5qhrc"]
+[gd_scene load_steps=31 format=3 uid="uid://b6gbflpp5qhrc"]
 
 [ext_resource type="Texture2D" uid="uid://bgrm6bmx8v7l0" path="res://AssetsTech/tiles/1_Industrial_Tileset_1.png" id="1_kkr62"]
 [ext_resource type="Texture2D" uid="uid://dt4f5j8844ig2" path="res://AssetsTech/tiles/1_Industrial_Tileset_2.png" id="2_3kj5o"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://bq5lkotprc1qi" path="res://AssetsTech/tiles/1_Industrial_Tileset_2B.png" id="8_vpdi5"]
 [ext_resource type="Texture2D" uid="uid://ccuxwdg5x7hsl" path="res://AssetsTech/tiles/Industrial_Tileset_1C.png" id="10_qosyn"]
 [ext_resource type="PackedScene" uid="uid://dag1jliosx12c" path="res://enemies plant and tech/robot.tscn" id="14_j8rw8"]
+[ext_resource type="PackedScene" uid="uid://b6x8g0v0j5o1y" path="res://scenes/hearts_ui.tscn" id="15_0y10r"]
+[ext_resource type="PackedScene" uid="uid://cl2wsgmwpj0ur" path="res://scenes/GameOver.tscn" id="16_gameover"]
+[ext_resource type="PackedScene" uid="uid://yyug7cgm3trk" path="res://scenes/inimigo.tscn" id="17_3jmqf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3kj5o"]
 texture = ExtResource("1_kkr62")
@@ -3410,3 +3413,19 @@ scale = Vector2(1.5, 1.5)
 [node name="Robot4" parent="." instance=ExtResource("14_j8rw8")]
 position = Vector2(10163, 720)
 scale = Vector2(1.5, 1.5)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HeartsUI" parent="UI" instance=ExtResource("15_0y10r")]
+offset_left = -423.0
+offset_top = 95.0
+offset_right = -223.0
+offset_bottom = 135.0
+
+[node name="GameOver" parent="UI" instance=ExtResource("16_gameover")]
+grow_horizontal = 2
+grow_vertical = 2
+script = null
+
+[node name="inimigo" parent="." instance=ExtResource("17_3jmqf")]
+position = Vector2(397, 712)
